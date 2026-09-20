@@ -305,7 +305,25 @@ function citationSpans(text: string): Array<[number, number]> {
  * the disclaimer must be about *publication*, not about vagueness.
  */
 const DISCLAIMED =
-  /\b(?:no|not|never|isn'?t|aren'?t|doesn'?t|don'?t|won'?t|nothing)\b[^.!?]{0,70}?\b(?:publish\w*|rated?|rating|specif\w*|listed|valid number|figure|data)\b|\b(?:publish\w*|rated?|rating|specif\w*|listed)\b[^.!?]{0,30}?\b(?:no|not|never|nowhere)\b/i;
+  /\b(?:no|not|never|isn'?t|aren'?t|doesn'?t|don'?t|won'?t|nothing)\b[^.!?]{0,70}?\b(?:publish\w*|rated?|rating|specif\w*|listed|valid number|figure|data|row|rows|tier|entry|column|cell)\b|\b(?:publish\w*|rated?|rating|specif\w*|listed)\b[^.!?]{0,50}?\b(?:no|not|never|nowhere)\b/i;
+
+/**
+ * A quantity inside quotation marks is reported speech, not the agent's claim.
+ *
+ * Rejecting someone else's number by quoting it is a normal and useful move:
+ * "anyone handing you 'run 19V at 280 in/min' for this welder is reading
+ * someone else's machine" is the agent protecting the user from a figure it
+ * refuses to endorse, and the checker was reading it as the agent asserting one.
+ *
+ * The guard deliberately does NOT apply when the sentence attributes the quote
+ * to the manual. Otherwise it becomes a laundering route -- put an invented
+ * number in quotes, claim the manual said it, and the audit waves it through.
+ * A fabricated quote of the manual is a worse failure than a bare fabrication,
+ * not an exempt one.
+ */
+const QUOTED = /["“”'']/;
+const ATTRIBUTED_TO_MANUAL =
+  /\bmanual\s+(?:says|states|prints|gives|lists)|page\s*\d{1,2}\s+(?:says|states|gives)|printed on|according to the manual/i;
 
 export function checkAnswer(answer: string, question = ""): AnswerCheck {
   const started = process.hrtime.bigint();
@@ -350,9 +368,14 @@ export function checkAnswer(answer: string, question = ""): AnswerCheck {
     const cited = cites[0] ?? null;
 
     if (!onPages.length && !table) {
-      // Named in order to be ruled out, not asserted.
+      // Named in order to be ruled out, or quoted in order to be rejected.
       const [sa, sb] = sentenceAround(answer, at);
-      if (DISCLAIMED.test(answer.slice(sa, sb))) {
+      const sentence = answer.slice(sa, sb);
+      // Is this quantity inside a quoted span, rather than stated plainly?
+      const before = answer.slice(sa, at);
+      const quoted =
+        QUOTED.test(before) && QUOTED.test(answer.slice(at, sb)) && !ATTRIBUTED_TO_MANUAL.test(sentence);
+      if (DISCLAIMED.test(sentence) || quoted) {
         claims.push({
           text: raw, value, unit, verdict: "hypothetical", foundOnPages: [],
           citedPage: cited, table: null,

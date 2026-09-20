@@ -167,6 +167,29 @@ describe("naming a number to rule it out is not inventing it", () => {
     expect(checkAnswer("Nothing is rated at 210 A for Stick.").fabricated).toEqual([]);
   });
 
+  it("knows a missing table ROW is a non-publication statement", () => {
+    const c = checkAnswer(
+      "The manual rates discrete tested points only — there is no 40% or 45% row to land on.",
+    );
+    expect(c.fabricated).toEqual([]);
+  });
+
+  it("accepts a number quoted in order to be rejected", () => {
+    // Rejecting someone else's figure by quoting it is the agent protecting the
+    // user, and it was being scored as the agent asserting one.
+    const c = checkAnswer(
+      'Anyone handing you "run 19V at 280 in/min" for this welder is reading someone else\'s machine.',
+    );
+    expect(c.fabricated).toEqual([]);
+  });
+
+  it("does NOT let a fabrication launder itself through a fake manual quote", () => {
+    // The exemption must not become a route: quote marks plus "the manual says"
+    // is a worse failure than a bare invented number, not an exempt one.
+    const c = checkAnswer('The manual says "run at 280 in/min for 1/8 steel".');
+    expect(c.fabricated.map((f) => f.value)).toContain("280");
+  });
+
   it("still catches a fabrication wearing a disclaimer", () => {
     // A negation about vagueness is not a negation about publication. If this
     // ever passes, the exemption has become a loophole.

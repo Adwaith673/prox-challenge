@@ -201,17 +201,30 @@ flakiness is visible instead of averaged away.
 
 Headline metric is the **false-answer rate** on must-refuse cases. Measured:
 
-| Run | Result | Measured against |
-|---|---|---|
-| Full suite, `npm run eval` | **36/36 checks**, 0.0% false-answer, 0 fabricated | current corpus |
-| Weld photos, `npm run eval:welds` | **18/18 checks**, 0 fabricated | current corpus |
-| Must-refuse at n=4, `--refuse-only --n 4` | **48/48 across 12 runs**, 0.0% | manual-only corpus |
-| Adversarial suite, `--stress` | **22/22 checks**, 0.0% | manual-only corpus |
+| Run | Checks | False-answer | Fabricated |
+|---|---|---|---|
+| Full suite, `npm run eval` | **36/36** | 0.0% | 0/9 |
+| Adversarial, `--stress` | 21/22 (one flaky) | **0.0%** | 0/8 |
+| Diagram stress, `--diagrams` | **23/23** | 0.0% | 0/5 |
+| Weld photos, `--welds` | **18/18** | — | 0/6 |
 
-The last two rows predate the corpus change described above — they were measured before the
-quick-start guide, the selection chart and the door decal were ingested, and before the tool
-surface went from nine tools to eleven. Re-measuring them is a thing still to do, not a thing
-already done.
+**98 of 99 checks, on the current corpus.** The one miss is `stress-wrong-photo`, which passed
+three of the four runs observed — genuinely flaky, not broken, and reported as flaky because
+`--n k` exists to make that visible instead of averaging it away.
+
+Re-running these after the corpus change was not a formality. It found three real problems that
+the old numbers were hiding:
+
+- **`diagram-settings-matrix-renders-holes` was asserting the wrong thing.** It had
+  `mustRefuse: true` and demanded a matrix of hatched holes — it encoded the design decision that
+  was since reversed. A case that flips from "must refuse" to "must answer" is either a
+  correction or a bug being papered over, so it was rewritten under a new id with the reasoning
+  recorded in place.
+- **The false-answer rate was briefly non-zero (7.7%).** Not a model failure: the pattern for
+  "states 220 A is unrated" had no contractions in it, so *"the manual doesn't rate 220 A"* scored
+  zero while the substance was correct.
+- **Two more prose-checker false positives**, both from the agent refusing a number rather than
+  asserting one — see below.
 
 The build also fails if the prompt-cache hit rate drops below 80%, which catches someone
 reintroducing a timestamp into the system prompt.
