@@ -199,6 +199,27 @@ def verify_unanswerable() -> None:
         for p in ev.get("pointers", []):
             check_quote(f"{where}.pointer(p{p['page']})", p["page"], p["quote"])
 
+    # INVARIANT: no pointer may be dressed up as the source of the settings
+    # matrix. This entry once asserted the matrix was "a decal on the inside of
+    # the welder door" -- an inference from the manual pointing at that decal
+    # five times, written down as a fact. The decal is now ingested and does not
+    # contain it. Three of those five pointers are about gas flow, one is about
+    # tungsten sizing on a different decal entirely.
+    gap = next((g for g in data["gaps"] if g["id"] == "settings_matrix_not_in_manual"), None)
+    if gap:
+        claim = normalize(gap["claim"]).lower()
+        if "is a decal" in claim or "on the inside of the welder door" in claim:
+            fail("unanswerable[settings]: the claim says the matrix IS on the door decal. "
+                 "It is not -- the decal carries the Auto Weld procedure and duty cycles. "
+                 "Do not re-introduce an inference as a finding.")
+        for ptr in gap["evidence"].get("pointers", []):
+            if ptr.get("claimsSettingsMatrix") is not False:
+                fail(f"unanswerable[settings].pointer(p{ptr['page']}): must record "
+                     f"claimsSettingsMatrix:false -- read the quote, it does not say that")
+            if not ptr.get("asksFor"):
+                fail(f"unanswerable[settings].pointer(p{ptr['page']}): record what the "
+                     f"pointer actually asks for, so nobody re-reads it as the matrix")
+
     for c in data["contradictions"]:
         where = f"contradiction[{c['id']}]"
         check_quote(where, c["page"], c["quote"])

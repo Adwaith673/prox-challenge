@@ -61,8 +61,8 @@ For settings or duty tables use kind "matrix". Exact shape, and note that column
 
 {
   kind: "matrix",
-  title: "...",
-  subtitle: "...",            // optional
+  title: "...",               // <= 80 characters
+  subtitle: "...",            // optional, <= 120 CHARACTERS -- longer is rejected by the schema
   annotations: [],
   columns: ["col A", "col B"],
   rows: [ { header: "row label", cells: [ <cell>, <cell> ] } ]   // one cell per column
@@ -168,6 +168,7 @@ Never compute, interpolate or extrapolate a duty cycle yourself -- it is a teste
   },
   async (args) => {
     const row = findDuty(args.process, args.inputVoltage);
+    const specRow = groundTruth.dutySpecTable.find((c) => c.process === args.process);
     if (!row) return err({ found: false, reason: "no such process/voltage combination" });
 
     const base = {
@@ -176,6 +177,24 @@ Never compute, interpolate or extrapolate a duty cycle yourself -- it is a teste
       outputRange: row.outputRange,
       points: row.points,
       maxPublishedAmps: row.maxPublishedAmps,
+      /**
+       * Both sources, with their roles named.
+       *
+       * The duty figures appear twice. Page 7's Specifications table is where a
+       * person looks and prints the headline pair ("25% @ 200 A"); page 14 is the
+       * rating plate, which is the only place the middle 60% tier appears at all.
+       * Returning p.14 alone was truthful and answered "why page 14?" with
+       * nothing, so both now come back labelled rather than the agent guessing
+       * which to lead with.
+       */
+      source: {
+        primary: specRow
+          ? { page: specRow.page, section: "Specifications", quote: specRow.quote }
+          : { page: row.page, section: "rating plate", quote: row.quote },
+        corroborating: specRow
+          ? [{ page: row.page, section: "rating plate", note: "carries the 60% tier, which the Specifications table omits" }]
+          : [],
+      },
       page: row.page,
       quote: row.quote,
     };

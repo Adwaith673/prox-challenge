@@ -6,10 +6,16 @@
     {
       "id": "settings_matrix_not_in_manual",
       "triggers": [
-        "wire feed speed", "WFS", "what voltage", "what settings", "in/min",
-        "amps for thickness", "gas flow for thickness", "tungsten size"
+        "wire feed speed",
+        "WFS",
+        "what voltage",
+        "what settings",
+        "in/min",
+        "amps for thickness",
+        "gas flow for thickness",
+        "tungsten size"
       ],
-      "claim": "The thickness x wire-diameter x gas x voltage x wire-feed-speed matrix is NOT in this manual. It is a decal on the inside of the welder door. The tungsten sizing chart is a separate decal on top of the welder.",
+      "claim": "No thickness x wire-diameter x voltage x wire-feed-speed lookup table is published in ANY of the four sources. This machine is synergic (Auto Weld): the operator sets diameter and material thickness and the welder derives amperage and voltage itself, so the table does not exist rather than being filed somewhere else.",
       "evidence": {
         "absence": {
           "probe": "in/min",
@@ -17,23 +23,79 @@
           "note": "Wire feed speed values would be printed in in/min. The string never appears across all 48 pages."
         },
         "pointers": [
-          { "page": 14, "quote": "Refer to the Settings Chart on the inside of the Welder door." },
-          { "page": 21, "quote": "Set Flow Gauge to SCFH value indicated on Settings Chart." },
-          { "page": 26, "quote": "Consult Settings Chart, on top of Welder, to determine proper Tungsten Electrode size to be used with thickness of material to be welded." },
-          { "page": 30, "quote": "Set Flow Gauge to SCFH value indicated on the Settings Chart on the inside of the Welder door." },
-          { "page": 42, "quote": "Ensure gas flow rate is set according to Settings Chart." }
-        ]
+          {
+            "page": 14,
+            "quote": "Refer to the Settings Chart on the inside of the Welder door.",
+            "asksFor": "generic reference to the Settings Chart",
+            "claimsSettingsMatrix": false
+          },
+          {
+            "page": 21,
+            "quote": "Set Flow Gauge to SCFH value indicated on Settings Chart.",
+            "asksFor": "gas flow (SCFH)",
+            "claimsSettingsMatrix": false
+          },
+          {
+            "page": 26,
+            "quote": "Consult Settings Chart, on top of Welder, to determine proper Tungsten Electrode size to be used with thickness of material to be welded.",
+            "asksFor": "tungsten electrode size -- and a SEPARATE decal, on TOP of the welder, not inside the door",
+            "claimsSettingsMatrix": false
+          },
+          {
+            "page": 30,
+            "quote": "Set Flow Gauge to SCFH value indicated on the Settings Chart on the inside of the Welder door.",
+            "asksFor": "gas flow (SCFH)",
+            "claimsSettingsMatrix": false
+          },
+          {
+            "page": 42,
+            "quote": "Ensure gas flow rate is set according to Settings Chart.",
+            "asksFor": "gas flow (SCFH)",
+            "claimsSettingsMatrix": false
+          }
+        ],
+        "decalChecked": {
+          "source": "files/product-inside.webp",
+          "contains": [
+            "Auto Weld procedure per process",
+            "Rated Duty Cycles panel",
+            "example LCD screens"
+          ],
+          "doesNotContain": "a thickness -> voltage / wire-feed-speed lookup table",
+          "note": "Checked by reading the image, not assumed from the manual's pointers."
+        }
       },
-      "correctBehavior": "Refuse to state a voltage or wire-feed-speed number. Render the matrix with its real axes and every cell hatched as not-in-manual, and direct the user to the door decal or the welder's own synergic screen, which computes these from process + wire diameter + material thickness + gas.",
-      "neverDo": "Do not infer settings from general welding knowledge. Do not interpolate from the synergic examples. We cannot cite a decal we do not have."
+      "correctBehavior": "Do NOT refuse, and do NOT send the user hunting for a table that is not on the decal either. Explain that the machine derives voltage and wire feed speed from diameter + thickness, give the knob sequence from that process's page (20 MIG/Flux, 30 TIG, 32 Stick), the gas flow, the polarity, and tell them to read the derived value off the display. The decal IS the right pointer for gas flow (SCFH) and the tungsten chart is on the separate top decal -- cite those for what they actually cover.",
+      "neverDo": "Do not infer settings from general welding knowledge. Do not interpolate from the synergic examples. Do not tell the user the missing table is on the door decal -- it is not, and sending someone to look for a table that does not exist is a wrong answer even though no number was invented.",
+      "_correction": [
+        "This entry used to assert that the matrix 'is a decal on the inside of the welder door'.",
+        "That was an inference, not a finding. The manual points at the Settings Chart five times, so",
+        "we assumed the missing table must be on it -- and wrote the assumption down as a fact in a",
+        "system whose whole claim is that it does not do that.",
+        "",
+        "The decal is now ingested (files/product-inside.webp) and can be checked. It carries the",
+        "Auto Weld procedure per process, the Rated Duty Cycles panel, and example LCD screens. It",
+        "does NOT carry a thickness -> voltage/WFS lookup table. Neither does anything else.",
+        "",
+        "Read what the five pointers actually ask for, below: three are about gas flow, one is about",
+        "tungsten sizing on a DIFFERENT decal on top of the welder, and one is generic. None of them",
+        "claims the decal holds the settings matrix."
+      ]
     },
     {
       "id": "duty_cycle_above_published",
-      "triggers": ["duty cycle at 220", "duty cycle at 140", "max duty cycle"],
+      "triggers": [
+        "duty cycle at 220",
+        "duty cycle at 140",
+        "max duty cycle"
+      ],
       "claim": "The machine's output range exceeds its published duty-cycle points in MIG on both input voltages. 240 V MIG reaches 220 A but nothing is published above 200 A; 120 V MIG reaches 140 A but nothing is published above 100 A.",
       "evidence": {
         "table": "duty_cycle",
-        "rows": ["mig_240", "mig_120"],
+        "rows": [
+          "mig_240",
+          "mig_120"
+        ],
         "note": "See outputRange.maxAmps versus maxPublishedAmps."
       },
       "correctBehavior": "State the highest published point and that nothing is published above it. Render the duty-cycle matrix with the out-of-range column present and hatched, so the hole in the data is visible rather than described.",
@@ -59,7 +121,9 @@
       ],
       "resolution": "The p.28 line is generic boilerplate about the AC TIG process in general; it does not describe a capability of this machine. Aluminum on the OmniPro 220 is welded with the optional spool gun using MIG, not TIG.",
       "correctBehavior": "Do not affirm that this machine can AC TIG aluminum. Surface the contradiction explicitly, cite both pages, and point the user to the spool gun path.",
-      "attachToRetrievalOf": [28]
+      "attachToRetrievalOf": [
+        28
+      ]
     }
   ]
 }

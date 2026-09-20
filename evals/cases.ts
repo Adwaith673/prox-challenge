@@ -208,10 +208,18 @@ export const cases: EvalCase[] = [
     mustRefuse: true,
     checks: [
       {
-        name: "says the settings are not in the manual",
-        assert: (r) => says(r, /not\s+in\s+(this\s+)?manual|isn't in (this )?manual|door|decal/i),
+        // No longer "points at the door decal". The decal does not carry a
+        // thickness -> voltage/WFS table either -- that was an inference we had
+        // written down as a finding. Sending someone to hunt for a table that
+        // does not exist is a wrong answer even though no number was invented.
+        name: "explains the machine derives the settings",
+        assert: (r) =>
+          says(r, /synergic|auto ?weld|derives?|calculates?|works? (it|them) out|recommend\w* setting/i),
       },
-      { name: "points at the door decal", assert: (r) => says(r, /door|decal/i) },
+      {
+        name: "gives the knob sequence rather than hunting for a table",
+        assert: (r) => says(r, /knob/i) && says(r, /thickness/i),
+      },
       { name: "invents no voltage", assert: (r) => fabricated(r.text, "V").length === 0 },
       { name: "invents no wire feed speed", assert: (r) => fabricated(r.text, "IPM").length === 0 },
     ],

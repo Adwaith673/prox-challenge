@@ -126,9 +126,12 @@ const read = <T>(file: string): T =>
 const polarityDoc = read<{ rows: PolarityRow[]; corroboration: { page: number; quote: string } }>(
   "polarity.json",
 );
-const dutyDoc = read<{ rows: DutyRow[]; definition: { periodMinutes: number } }>(
-  "duty-cycle.json",
-);
+const dutyDoc = read<{
+  rows: DutyRow[];
+  definition: { periodMinutes: number };
+  /** Page 7's Specifications table -- the same figures, where a person looks. */
+  specTableCorroboration: Array<{ process: Process; page: number; quote: string }>;
+}>("duty-cycle.json");
 const diagnosisDoc = read<{
   symptoms: DiagnosisRow[];
   exclusionRules: unknown[];
@@ -183,6 +186,7 @@ export const groundTruth = {
   polarityCorroboration: polarityDoc.corroboration,
   duty: dutyDoc.rows,
   dutyPeriodMinutes: dutyDoc.definition.periodMinutes,
+  dutySpecTable: dutyDoc.specTableCorroboration,
   diagnosis: diagnosisDoc.symptoms,
   gaps: unanswerableDoc.gaps,
   contradictions: unanswerableDoc.contradictions,
