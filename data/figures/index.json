@@ -1,0 +1,1666 @@
+[
+  {
+    "id": "p01-f1",
+    "page": 1,
+    "bbox": [
+      37.3,
+      62.0,
+      560.9,
+      798.3
+    ],
+    "width": 2183,
+    "height": 3069,
+    "file": "figures/p01-f1.png"
+  },
+  {
+    "id": "p02-f1",
+    "page": 2,
+    "bbox": [
+      38.0,
+      136.0,
+      557.3,
+      348.0
+    ],
+    "width": 2164,
+    "height": 884,
+    "file": "figures/p02-f1.png"
+  },
+  {
+    "id": "p05-f1",
+    "page": 5,
+    "bbox": [
+      504.0,
+      62.0,
+      557.3,
+      792.0
+    ],
+    "width": 222,
+    "height": 3042,
+    "file": "figures/p05-f1.png"
+  },
+  {
+    "id": "p06-f1",
+    "page": 6,
+    "bbox": [
+      38.0,
+      72.0,
+      156.0,
+      144.0
+    ],
+    "width": 492,
+    "height": 300,
+    "file": "figures/p06-f1.png"
+  },
+  {
+    "id": "p06-f2",
+    "page": 6,
+    "bbox": [
+      38.0,
+      436.0,
+      156.0,
+      636.0
+    ],
+    "width": 492,
+    "height": 834,
+    "file": "figures/p06-f2.png"
+  },
+  {
+    "id": "p06-f3",
+    "page": 6,
+    "bbox": [
+      344.0,
+      500.0,
+      388.0,
+      784.0
+    ],
+    "width": 184,
+    "height": 1184,
+    "file": "figures/p06-f3.png"
+  },
+  {
+    "id": "p08-f1",
+    "page": 8,
+    "bbox": [
+      38.0,
+      62.0,
+      508.0,
+      788.0
+    ],
+    "width": 1959,
+    "height": 3026,
+    "file": "figures/p08-f1.png"
+  },
+  {
+    "id": "p09-f1",
+    "page": 9,
+    "bbox": [
+      96.0,
+      84.0,
+      496.0,
+      396.0
+    ],
+    "width": 1667,
+    "height": 1300,
+    "file": "figures/p09-f1.png"
+  },
+  {
+    "id": "p10-f1",
+    "page": 10,
+    "bbox": [
+      38.0,
+      62.0,
+      156.0,
+      792.0
+    ],
+    "width": 492,
+    "height": 3042,
+    "file": "figures/p10-f1.png"
+  },
+  {
+    "id": "p10-f2",
+    "page": 10,
+    "bbox": [
+      200.0,
+      100.0,
+      552.0,
+      316.0
+    ],
+    "width": 1467,
+    "height": 901,
+    "file": "figures/p10-f2.png"
+  },
+  {
+    "id": "p10-f3",
+    "page": 10,
+    "bbox": [
+      332.0,
+      356.0,
+      548.0,
+      516.0
+    ],
+    "width": 901,
+    "height": 667,
+    "file": "figures/p10-f3.png"
+  },
+  {
+    "id": "p10-f4",
+    "page": 10,
+    "bbox": [
+      296.0,
+      572.0,
+      528.0,
+      720.0
+    ],
+    "width": 967,
+    "height": 617,
+    "file": "figures/p10-f4.png"
+  },
+  {
+    "id": "p11-f1",
+    "page": 11,
+    "bbox": [
+      328.0,
+      60.0,
+      557.3,
+      316.0
+    ],
+    "width": 956,
+    "height": 1067,
+    "file": "figures/p11-f1.png"
+  },
+  {
+    "id": "p11-f2",
+    "page": 11,
+    "bbox": [
+      288.0,
+      62.0,
+      519.5,
+      316.0
+    ],
+    "width": 965,
+    "height": 1059,
+    "file": "figures/p11-f2.png"
+  },
+  {
+    "id": "p11-f3",
+    "page": 11,
+    "bbox": [
+      328.0,
+      376.0,
+      557.3,
+      544.0
+    ],
+    "width": 956,
+    "height": 701,
+    "file": "figures/p11-f3.png"
+  },
+  {
+    "id": "p11-f4",
+    "page": 11,
+    "bbox": [
+      296.0,
+      620.0,
+      408.0,
+      724.0
+    ],
+    "width": 467,
+    "height": 434,
+    "file": "figures/p11-f4.png"
+  },
+  {
+    "id": "p11-f5",
+    "page": 11,
+    "bbox": [
+      328.0,
+      620.0,
+      557.3,
+      724.0
+    ],
+    "width": 956,
+    "height": 434,
+    "file": "figures/p11-f5.png"
+  },
+  {
+    "id": "p12-f1",
+    "page": 12,
+    "bbox": [
+      332.0,
+      108.0,
+      552.0,
+      364.3
+    ],
+    "width": 917,
+    "height": 1069,
+    "file": "figures/p12-f1.png"
+  },
+  {
+    "id": "p12-f2",
+    "page": 12,
+    "bbox": [
+      340.0,
+      284.0,
+      400.0,
+      476.0
+    ],
+    "width": 251,
+    "height": 801,
+    "file": "figures/p12-f2.png"
+  },
+  {
+    "id": "p12-f3",
+    "page": 12,
+    "bbox": [
+      331.9,
+      396.6,
+      552.0,
+      660.0
+    ],
+    "width": 918,
+    "height": 1098,
+    "file": "figures/p12-f3.png"
+  },
+  {
+    "id": "p13-f1",
+    "page": 13,
+    "bbox": [
+      236.0,
+      60.0,
+      557.3,
+      192.0
+    ],
+    "width": 1339,
+    "height": 550,
+    "file": "figures/p13-f1.png"
+  },
+  {
+    "id": "p13-f2",
+    "page": 13,
+    "bbox": [
+      236.0,
+      252.0,
+      557.3,
+      432.0
+    ],
+    "width": 1339,
+    "height": 750,
+    "file": "figures/p13-f2.png"
+  },
+  {
+    "id": "p13-f3",
+    "page": 13,
+    "bbox": [
+      236.0,
+      460.0,
+      557.3,
+      768.0
+    ],
+    "width": 1339,
+    "height": 1284,
+    "file": "figures/p13-f3.png"
+  },
+  {
+    "id": "p14-f1",
+    "page": 14,
+    "bbox": [
+      240.0,
+      59.3,
+      557.3,
+      281.3
+    ],
+    "width": 1322,
+    "height": 926,
+    "file": "figures/p14-f1.png"
+  },
+  {
+    "id": "p14-f2",
+    "page": 14,
+    "bbox": [
+      280.0,
+      300.0,
+      524.0,
+      700.0
+    ],
+    "width": 1018,
+    "height": 1667,
+    "file": "figures/p14-f2.png"
+  },
+  {
+    "id": "p15-f1",
+    "page": 15,
+    "bbox": [
+      38.0,
+      54.0,
+      557.3,
+      140.0
+    ],
+    "width": 2164,
+    "height": 359,
+    "file": "figures/p15-f1.png"
+  },
+  {
+    "id": "p15-f2",
+    "page": 15,
+    "bbox": [
+      36.0,
+      193.6,
+      557.3,
+      328.0
+    ],
+    "width": 2172,
+    "height": 561,
+    "file": "figures/p15-f2.png"
+  },
+  {
+    "id": "p15-f3",
+    "page": 15,
+    "bbox": [
+      36.0,
+      354.3,
+      557.3,
+      478.4
+    ],
+    "width": 2172,
+    "height": 518,
+    "file": "figures/p15-f3.png"
+  },
+  {
+    "id": "p15-f4",
+    "page": 15,
+    "bbox": [
+      36.0,
+      514.0,
+      557.3,
+      772.0
+    ],
+    "width": 2172,
+    "height": 1076,
+    "file": "figures/p15-f4.png"
+  },
+  {
+    "id": "p16-f1",
+    "page": 16,
+    "bbox": [
+      38.0,
+      60.0,
+      557.3,
+      528.0
+    ],
+    "width": 2164,
+    "height": 1950,
+    "file": "figures/p16-f1.png"
+  },
+  {
+    "id": "p16-f2",
+    "page": 16,
+    "bbox": [
+      38.0,
+      600.0,
+      557.3,
+      796.0
+    ],
+    "width": 2164,
+    "height": 817,
+    "file": "figures/p16-f2.png"
+  },
+  {
+    "id": "p17-f1",
+    "page": 17,
+    "bbox": [
+      236.0,
+      60.0,
+      557.3,
+      204.0
+    ],
+    "width": 1339,
+    "height": 600,
+    "file": "figures/p17-f1.png"
+  },
+  {
+    "id": "p17-f2",
+    "page": 17,
+    "bbox": [
+      236.0,
+      244.0,
+      557.3,
+      368.0
+    ],
+    "width": 1339,
+    "height": 518,
+    "file": "figures/p17-f2.png"
+  },
+  {
+    "id": "p17-f3",
+    "page": 17,
+    "bbox": [
+      236.0,
+      388.0,
+      557.3,
+      724.0
+    ],
+    "width": 1339,
+    "height": 1401,
+    "file": "figures/p17-f3.png"
+  },
+  {
+    "id": "p18-f1",
+    "page": 18,
+    "bbox": [
+      38.0,
+      60.0,
+      156.0,
+      132.0
+    ],
+    "width": 492,
+    "height": 300,
+    "file": "figures/p18-f1.png"
+  },
+  {
+    "id": "p18-f2",
+    "page": 18,
+    "bbox": [
+      180.0,
+      204.0,
+      552.0,
+      628.0
+    ],
+    "width": 1550,
+    "height": 1767,
+    "file": "figures/p18-f2.png"
+  },
+  {
+    "id": "p18-f3",
+    "page": 18,
+    "bbox": [
+      38.0,
+      520.0,
+      156.0,
+      600.0
+    ],
+    "width": 492,
+    "height": 334,
+    "file": "figures/p18-f3.png"
+  },
+  {
+    "id": "p18-f4",
+    "page": 18,
+    "bbox": [
+      220.0,
+      672.0,
+      384.0,
+      748.0
+    ],
+    "width": 684,
+    "height": 317,
+    "file": "figures/p18-f4.png"
+  },
+  {
+    "id": "p19-f1",
+    "page": 19,
+    "bbox": [
+      256.0,
+      64.0,
+      557.3,
+      356.0
+    ],
+    "width": 1256,
+    "height": 1218,
+    "file": "figures/p19-f1.png"
+  },
+  {
+    "id": "p19-f2",
+    "page": 19,
+    "bbox": [
+      68.0,
+      404.0,
+      260.0,
+      491.5
+    ],
+    "width": 801,
+    "height": 365,
+    "file": "figures/p19-f2.png"
+  },
+  {
+    "id": "p19-f3",
+    "page": 19,
+    "bbox": [
+      256.0,
+      608.0,
+      557.3,
+      756.0
+    ],
+    "width": 1256,
+    "height": 617,
+    "file": "figures/p19-f3.png"
+  },
+  {
+    "id": "p20-f1",
+    "page": 20,
+    "bbox": [
+      200.0,
+      62.0,
+      557.3,
+      176.0
+    ],
+    "width": 1489,
+    "height": 476,
+    "file": "figures/p20-f1.png"
+  },
+  {
+    "id": "p20-f2",
+    "page": 20,
+    "bbox": [
+      64.0,
+      244.0,
+      280.0,
+      380.0
+    ],
+    "width": 901,
+    "height": 568,
+    "file": "figures/p20-f2.png"
+  },
+  {
+    "id": "p20-f3",
+    "page": 20,
+    "bbox": [
+      344.0,
+      296.0,
+      524.0,
+      400.0
+    ],
+    "width": 751,
+    "height": 434,
+    "file": "figures/p20-f3.png"
+  },
+  {
+    "id": "p20-f4",
+    "page": 20,
+    "bbox": [
+      336.0,
+      484.0,
+      528.0,
+      592.0
+    ],
+    "width": 800,
+    "height": 451,
+    "file": "figures/p20-f4.png"
+  },
+  {
+    "id": "p20-f5",
+    "page": 20,
+    "bbox": [
+      80.0,
+      624.0,
+      260.0,
+      728.0
+    ],
+    "width": 751,
+    "height": 434,
+    "file": "figures/p20-f5.png"
+  },
+  {
+    "id": "p21-f1",
+    "page": 21,
+    "bbox": [
+      340.0,
+      62.0,
+      504.0,
+      500.0
+    ],
+    "width": 684,
+    "height": 1826,
+    "file": "figures/p21-f1.png"
+  },
+  {
+    "id": "p21-f2",
+    "page": 21,
+    "bbox": [
+      356.0,
+      544.0,
+      468.0,
+      644.0
+    ],
+    "width": 467,
+    "height": 418,
+    "file": "figures/p21-f2.png"
+  },
+  {
+    "id": "p21-f3",
+    "page": 21,
+    "bbox": [
+      384.0,
+      672.0,
+      468.0,
+      793.9
+    ],
+    "width": 350,
+    "height": 508,
+    "file": "figures/p21-f3.png"
+  },
+  {
+    "id": "p22-f1",
+    "page": 22,
+    "bbox": [
+      284.0,
+      96.0,
+      548.0,
+      172.0
+    ],
+    "width": 1101,
+    "height": 317,
+    "file": "figures/p22-f1.png"
+  },
+  {
+    "id": "p22-f2",
+    "page": 22,
+    "bbox": [
+      300.0,
+      233.3,
+      556.0,
+      368.0
+    ],
+    "width": 1067,
+    "height": 563,
+    "file": "figures/p22-f2.png"
+  },
+  {
+    "id": "p22-f3",
+    "page": 22,
+    "bbox": [
+      296.0,
+      456.0,
+      556.0,
+      580.0
+    ],
+    "width": 1084,
+    "height": 517,
+    "file": "figures/p22-f3.png"
+  },
+  {
+    "id": "p22-f4",
+    "page": 22,
+    "bbox": [
+      368.0,
+      604.0,
+      480.3,
+      756.0
+    ],
+    "width": 469,
+    "height": 634,
+    "file": "figures/p22-f4.png"
+  },
+  {
+    "id": "p23-f1",
+    "page": 23,
+    "bbox": [
+      184.0,
+      57.3,
+      557.3,
+      200.0
+    ],
+    "width": 1556,
+    "height": 596,
+    "file": "figures/p23-f1.png"
+  },
+  {
+    "id": "p23-f2",
+    "page": 23,
+    "bbox": [
+      184.0,
+      228.0,
+      557.3,
+      280.0
+    ],
+    "width": 1556,
+    "height": 217,
+    "file": "figures/p23-f2.png"
+  },
+  {
+    "id": "p23-f3",
+    "page": 23,
+    "bbox": [
+      184.0,
+      300.0,
+      557.3,
+      796.0
+    ],
+    "width": 1556,
+    "height": 2067,
+    "file": "figures/p23-f3.png"
+  },
+  {
+    "id": "p24-f1",
+    "page": 24,
+    "bbox": [
+      38.0,
+      68.0,
+      156.0,
+      132.0
+    ],
+    "width": 492,
+    "height": 267,
+    "file": "figures/p24-f1.png"
+  },
+  {
+    "id": "p24-f2",
+    "page": 24,
+    "bbox": [
+      72.0,
+      228.0,
+      532.0,
+      624.0
+    ],
+    "width": 1917,
+    "height": 1650,
+    "file": "figures/p24-f2.png"
+  },
+  {
+    "id": "p24-f3",
+    "page": 24,
+    "bbox": [
+      38.0,
+      443.6,
+      156.0,
+      624.0
+    ],
+    "width": 492,
+    "height": 752,
+    "file": "figures/p24-f3.png"
+  },
+  {
+    "id": "p25-f1",
+    "page": 25,
+    "bbox": [
+      200.0,
+      62.0,
+      512.0,
+      484.0
+    ],
+    "width": 1301,
+    "height": 1759,
+    "file": "figures/p25-f1.png"
+  },
+  {
+    "id": "p25-f2",
+    "page": 25,
+    "bbox": [
+      332.0,
+      548.0,
+      508.0,
+      764.0
+    ],
+    "width": 734,
+    "height": 901,
+    "file": "figures/p25-f2.png"
+  },
+  {
+    "id": "p26-f1",
+    "page": 26,
+    "bbox": [
+      464.0,
+      76.0,
+      560.9,
+      256.0
+    ],
+    "width": 404,
+    "height": 751,
+    "file": "figures/p26-f1.png"
+  },
+  {
+    "id": "p26-f2",
+    "page": 26,
+    "bbox": [
+      356.0,
+      348.0,
+      536.0,
+      532.0
+    ],
+    "width": 751,
+    "height": 767,
+    "file": "figures/p26-f2.png"
+  },
+  {
+    "id": "p27-f1",
+    "page": 27,
+    "bbox": [
+      100.0,
+      92.0,
+      484.0,
+      408.0
+    ],
+    "width": 1601,
+    "height": 1317,
+    "file": "figures/p27-f1.png"
+  },
+  {
+    "id": "p27-f2",
+    "page": 27,
+    "bbox": [
+      332.0,
+      540.0,
+      508.0,
+      756.0
+    ],
+    "width": 734,
+    "height": 900,
+    "file": "figures/p27-f2.png"
+  },
+  {
+    "id": "p28-f1",
+    "page": 28,
+    "bbox": [
+      38.0,
+      60.0,
+      156.0,
+      128.0
+    ],
+    "width": 492,
+    "height": 284,
+    "file": "figures/p28-f1.png"
+  },
+  {
+    "id": "p28-f2",
+    "page": 28,
+    "bbox": [
+      280.0,
+      196.0,
+      552.0,
+      580.0
+    ],
+    "width": 1134,
+    "height": 1601,
+    "file": "figures/p28-f2.png"
+  },
+  {
+    "id": "p28-f3",
+    "page": 28,
+    "bbox": [
+      38.0,
+      488.0,
+      156.0,
+      572.0
+    ],
+    "width": 492,
+    "height": 351,
+    "file": "figures/p28-f3.png"
+  },
+  {
+    "id": "p28-f4",
+    "page": 28,
+    "bbox": [
+      220.0,
+      636.0,
+      384.0,
+      712.0
+    ],
+    "width": 684,
+    "height": 317,
+    "file": "figures/p28-f4.png"
+  },
+  {
+    "id": "p29-f1",
+    "page": 29,
+    "bbox": [
+      44.0,
+      236.0,
+      280.0,
+      348.0
+    ],
+    "width": 984,
+    "height": 467,
+    "file": "figures/p29-f1.png"
+  },
+  {
+    "id": "p29-f2",
+    "page": 29,
+    "bbox": [
+      256.0,
+      236.0,
+      557.3,
+      348.0
+    ],
+    "width": 1256,
+    "height": 467,
+    "file": "figures/p29-f2.png"
+  },
+  {
+    "id": "p29-f3",
+    "page": 29,
+    "bbox": [
+      68.0,
+      400.0,
+      256.0,
+      487.1
+    ],
+    "width": 784,
+    "height": 364,
+    "file": "figures/p29-f3.png"
+  },
+  {
+    "id": "p29-f4",
+    "page": 29,
+    "bbox": [
+      256.0,
+      612.0,
+      557.3,
+      760.0
+    ],
+    "width": 1256,
+    "height": 617,
+    "file": "figures/p29-f4.png"
+  },
+  {
+    "id": "p30-f1",
+    "page": 30,
+    "bbox": [
+      344.0,
+      296.0,
+      524.0,
+      404.0
+    ],
+    "width": 751,
+    "height": 451,
+    "file": "figures/p30-f1.png"
+  },
+  {
+    "id": "p30-f2",
+    "page": 30,
+    "bbox": [
+      344.0,
+      472.0,
+      524.0,
+      576.0
+    ],
+    "width": 751,
+    "height": 434,
+    "file": "figures/p30-f2.png"
+  },
+  {
+    "id": "p30-f3",
+    "page": 30,
+    "bbox": [
+      38.0,
+      568.0,
+      156.0,
+      708.0
+    ],
+    "width": 492,
+    "height": 584,
+    "file": "figures/p30-f3.png"
+  },
+  {
+    "id": "p30-f4",
+    "page": 30,
+    "bbox": [
+      64.0,
+      568.0,
+      280.0,
+      708.0
+    ],
+    "width": 901,
+    "height": 584,
+    "file": "figures/p30-f4.png"
+  },
+  {
+    "id": "p30-f5",
+    "page": 30,
+    "bbox": [
+      336.0,
+      688.0,
+      528.0,
+      788.0
+    ],
+    "width": 800,
+    "height": 418,
+    "file": "figures/p30-f5.png"
+  },
+  {
+    "id": "p31-f1",
+    "page": 31,
+    "bbox": [
+      72.0,
+      208.0,
+      252.0,
+      428.0
+    ],
+    "width": 750,
+    "height": 918,
+    "file": "figures/p31-f1.png"
+  },
+  {
+    "id": "p31-f2",
+    "page": 31,
+    "bbox": [
+      68.0,
+      608.0,
+      256.0,
+      700.0
+    ],
+    "width": 784,
+    "height": 384,
+    "file": "figures/p31-f2.png"
+  },
+  {
+    "id": "p32-f1",
+    "page": 32,
+    "bbox": [
+      344.0,
+      176.0,
+      524.0,
+      280.0
+    ],
+    "width": 751,
+    "height": 434,
+    "file": "figures/p32-f1.png"
+  },
+  {
+    "id": "p32-f2",
+    "page": 32,
+    "bbox": [
+      344.0,
+      352.0,
+      524.0,
+      456.0
+    ],
+    "width": 751,
+    "height": 434,
+    "file": "figures/p32-f2.png"
+  },
+  {
+    "id": "p32-f3",
+    "page": 32,
+    "bbox": [
+      38.0,
+      380.0,
+      156.0,
+      520.0
+    ],
+    "width": 492,
+    "height": 584,
+    "file": "figures/p32-f3.png"
+  },
+  {
+    "id": "p32-f4",
+    "page": 32,
+    "bbox": [
+      64.0,
+      380.0,
+      280.0,
+      520.0
+    ],
+    "width": 901,
+    "height": 584,
+    "file": "figures/p32-f4.png"
+  },
+  {
+    "id": "p32-f5",
+    "page": 32,
+    "bbox": [
+      324.0,
+      580.0,
+      540.0,
+      684.0
+    ],
+    "width": 900,
+    "height": 434,
+    "file": "figures/p32-f5.png"
+  },
+  {
+    "id": "p32-f6",
+    "page": 32,
+    "bbox": [
+      38.0,
+      636.0,
+      156.0,
+      740.0
+    ],
+    "width": 492,
+    "height": 434,
+    "file": "figures/p32-f6.png"
+  },
+  {
+    "id": "p32-f7",
+    "page": 32,
+    "bbox": [
+      80.0,
+      636.0,
+      260.0,
+      740.0
+    ],
+    "width": 751,
+    "height": 434,
+    "file": "figures/p32-f7.png"
+  },
+  {
+    "id": "p33-f1",
+    "page": 33,
+    "bbox": [
+      328.0,
+      152.0,
+      520.0,
+      248.0
+    ],
+    "width": 801,
+    "height": 401,
+    "file": "figures/p33-f1.png"
+  },
+  {
+    "id": "p33-f2",
+    "page": 33,
+    "bbox": [
+      72.0,
+      256.0,
+      252.0,
+      688.0
+    ],
+    "width": 750,
+    "height": 1801,
+    "file": "figures/p33-f2.png"
+  },
+  {
+    "id": "p34-f1",
+    "page": 34,
+    "bbox": [
+      38.0,
+      62.0,
+      156.0,
+      788.0
+    ],
+    "width": 492,
+    "height": 3026,
+    "file": "figures/p34-f1.png"
+  },
+  {
+    "id": "p34-f2",
+    "page": 34,
+    "bbox": [
+      208.0,
+      136.0,
+      396.0,
+      192.0
+    ],
+    "width": 784,
+    "height": 234,
+    "file": "figures/p34-f2.png"
+  },
+  {
+    "id": "p34-f3",
+    "page": 34,
+    "bbox": [
+      308.0,
+      236.0,
+      557.3,
+      492.3
+    ],
+    "width": 1039,
+    "height": 1069,
+    "file": "figures/p34-f3.png"
+  },
+  {
+    "id": "p34-f4",
+    "page": 34,
+    "bbox": [
+      320.0,
+      552.0,
+      524.0,
+      700.0
+    ],
+    "width": 851,
+    "height": 617,
+    "file": "figures/p34-f4.png"
+  },
+  {
+    "id": "p35-f1",
+    "page": 35,
+    "bbox": [
+      38.0,
+      84.0,
+      557.3,
+      180.0
+    ],
+    "width": 2164,
+    "height": 400,
+    "file": "figures/p35-f1.png"
+  },
+  {
+    "id": "p35-f2",
+    "page": 35,
+    "bbox": [
+      38.0,
+      284.0,
+      557.3,
+      496.0
+    ],
+    "width": 2164,
+    "height": 884,
+    "file": "figures/p35-f2.png"
+  },
+  {
+    "id": "p35-f3",
+    "page": 35,
+    "bbox": [
+      38.0,
+      600.0,
+      557.3,
+      700.0
+    ],
+    "width": 2164,
+    "height": 417,
+    "file": "figures/p35-f3.png"
+  },
+  {
+    "id": "p36-f1",
+    "page": 36,
+    "bbox": [
+      64.0,
+      121.8,
+      552.0,
+      236.0
+    ],
+    "width": 2034,
+    "height": 477,
+    "file": "figures/p36-f1.png"
+  },
+  {
+    "id": "p36-f2",
+    "page": 36,
+    "bbox": [
+      92.0,
+      384.0,
+      244.0,
+      444.0
+    ],
+    "width": 634,
+    "height": 250,
+    "file": "figures/p36-f2.png"
+  },
+  {
+    "id": "p36-f3",
+    "page": 36,
+    "bbox": [
+      60.0,
+      484.0,
+      524.0,
+      664.0
+    ],
+    "width": 1934,
+    "height": 751,
+    "file": "figures/p36-f3.png"
+  },
+  {
+    "id": "p37-f1",
+    "page": 37,
+    "bbox": [
+      84.0,
+      72.0,
+      224.0,
+      140.0
+    ],
+    "width": 584,
+    "height": 284,
+    "file": "figures/p37-f1.png"
+  },
+  {
+    "id": "p37-f2",
+    "page": 37,
+    "bbox": [
+      352.0,
+      84.0,
+      492.0,
+      152.0
+    ],
+    "width": 584,
+    "height": 284,
+    "file": "figures/p37-f2.png"
+  },
+  {
+    "id": "p37-f3",
+    "page": 37,
+    "bbox": [
+      80.0,
+      512.0,
+      224.0,
+      588.0
+    ],
+    "width": 601,
+    "height": 317,
+    "file": "figures/p37-f3.png"
+  },
+  {
+    "id": "p37-f4",
+    "page": 37,
+    "bbox": [
+      276.0,
+      536.0,
+      484.0,
+      604.0
+    ],
+    "width": 867,
+    "height": 284,
+    "file": "figures/p37-f4.png"
+  },
+  {
+    "id": "p38-f1",
+    "page": 38,
+    "bbox": [
+      38.0,
+      84.0,
+      556.0,
+      192.0
+    ],
+    "width": 2159,
+    "height": 450,
+    "file": "figures/p38-f1.png"
+  },
+  {
+    "id": "p38-f2",
+    "page": 38,
+    "bbox": [
+      38.0,
+      324.0,
+      556.0,
+      520.0
+    ],
+    "width": 2159,
+    "height": 817,
+    "file": "figures/p38-f2.png"
+  },
+  {
+    "id": "p38-f3",
+    "page": 38,
+    "bbox": [
+      38.0,
+      572.0,
+      556.0,
+      692.0
+    ],
+    "width": 2159,
+    "height": 501,
+    "file": "figures/p38-f3.png"
+  },
+  {
+    "id": "p39-f1",
+    "page": 39,
+    "bbox": [
+      44.0,
+      132.0,
+      557.3,
+      204.0
+    ],
+    "width": 2139,
+    "height": 300,
+    "file": "figures/p39-f1.png"
+  },
+  {
+    "id": "p39-f2",
+    "page": 39,
+    "bbox": [
+      44.0,
+      480.0,
+      557.3,
+      548.0
+    ],
+    "width": 2139,
+    "height": 284,
+    "file": "figures/p39-f2.png"
+  },
+  {
+    "id": "p39-f3",
+    "page": 39,
+    "bbox": [
+      44.0,
+      692.0,
+      557.3,
+      759.2
+    ],
+    "width": 2139,
+    "height": 281,
+    "file": "figures/p39-f3.png"
+  },
+  {
+    "id": "p40-f1",
+    "page": 40,
+    "bbox": [
+      38.0,
+      60.0,
+      260.0,
+      128.0
+    ],
+    "width": 926,
+    "height": 284,
+    "file": "figures/p40-f1.png"
+  },
+  {
+    "id": "p40-f2",
+    "page": 40,
+    "bbox": [
+      76.9,
+      62.0,
+      416.0,
+      128.0
+    ],
+    "width": 1414,
+    "height": 276,
+    "file": "figures/p40-f2.png"
+  },
+  {
+    "id": "p40-f3",
+    "page": 40,
+    "bbox": [
+      38.0,
+      208.0,
+      260.0,
+      272.0
+    ],
+    "width": 926,
+    "height": 268,
+    "file": "figures/p40-f3.png"
+  },
+  {
+    "id": "p40-f4",
+    "page": 40,
+    "bbox": [
+      38.0,
+      344.0,
+      260.0,
+      420.0
+    ],
+    "width": 926,
+    "height": 317,
+    "file": "figures/p40-f4.png"
+  },
+  {
+    "id": "p40-f5",
+    "page": 40,
+    "bbox": [
+      38.0,
+      488.0,
+      260.0,
+      556.0
+    ],
+    "width": 926,
+    "height": 284,
+    "file": "figures/p40-f5.png"
+  },
+  {
+    "id": "p40-f6",
+    "page": 40,
+    "bbox": [
+      38.0,
+      624.0,
+      260.0,
+      692.0
+    ],
+    "width": 926,
+    "height": 284,
+    "file": "figures/p40-f6.png"
+  },
+  {
+    "id": "p41-f1",
+    "page": 41,
+    "bbox": [
+      38.0,
+      72.0,
+      148.0,
+      152.0
+    ],
+    "width": 459,
+    "height": 334,
+    "file": "figures/p41-f1.png"
+  },
+  {
+    "id": "p41-f2",
+    "page": 41,
+    "bbox": [
+      340.0,
+      440.0,
+      557.3,
+      508.0
+    ],
+    "width": 906,
+    "height": 284,
+    "file": "figures/p41-f2.png"
+  },
+  {
+    "id": "p41-f3",
+    "page": 41,
+    "bbox": [
+      92.0,
+      628.0,
+      188.0,
+      760.0
+    ],
+    "width": 401,
+    "height": 551,
+    "file": "figures/p41-f3.png"
+  },
+  {
+    "id": "p41-f4",
+    "page": 41,
+    "bbox": [
+      340.0,
+      644.0,
+      557.3,
+      756.0
+    ],
+    "width": 906,
+    "height": 467,
+    "file": "figures/p41-f4.png"
+  },
+  {
+    "id": "p42-f1",
+    "page": 42,
+    "bbox": [
+      38.0,
+      62.0,
+      98.1,
+      788.0
+    ],
+    "width": 251,
+    "height": 3026,
+    "file": "figures/p42-f1.png"
+  },
+  {
+    "id": "p44-f1",
+    "page": 44,
+    "bbox": [
+      38.0,
+      62.0,
+      92.0,
+      788.0
+    ],
+    "width": 226,
+    "height": 3026,
+    "file": "figures/p44-f1.png"
+  },
+  {
+    "id": "p45-f1",
+    "page": 45,
+    "bbox": [
+      56.0,
+      96.0,
+      272.0,
+      498.4
+    ],
+    "width": 901,
+    "height": 1677,
+    "file": "figures/p45-f1.png"
+  },
+  {
+    "id": "p45-f2",
+    "page": 45,
+    "bbox": [
+      340.0,
+      204.0,
+      436.0,
+      496.0
+    ],
+    "width": 401,
+    "height": 1217,
+    "file": "figures/p45-f2.png"
+  },
+  {
+    "id": "p45-f3",
+    "page": 45,
+    "bbox": [
+      304.0,
+      520.0,
+      524.0,
+      664.0
+    ],
+    "width": 918,
+    "height": 601,
+    "file": "figures/p45-f3.png"
+  },
+  {
+    "id": "p45-f4",
+    "page": 45,
+    "bbox": [
+      164.0,
+      552.0,
+      268.0,
+      640.0
+    ],
+    "width": 434,
+    "height": 367,
+    "file": "figures/p45-f4.png"
+  },
+  {
+    "id": "p45-f5",
+    "page": 45,
+    "bbox": [
+      308.0,
+      684.0,
+      524.0,
+      788.0
+    ],
+    "width": 901,
+    "height": 434,
+    "file": "figures/p45-f5.png"
+  },
+  {
+    "id": "p47-f1",
+    "page": 47,
+    "bbox": [
+      40.0,
+      120.0,
+      532.0,
+      548.0
+    ],
+    "width": 2051,
+    "height": 1784,
+    "file": "figures/p47-f1.png"
+  },
+  {
+    "id": "p48-f1",
+    "page": 48,
+    "bbox": [
+      38.0,
+      660.0,
+      557.3,
+      793.9
+    ],
+    "width": 2164,
+    "height": 558,
+    "file": "figures/p48-f1.png"
+  }
+]

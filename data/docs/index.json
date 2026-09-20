@@ -1,0 +1,53 @@
+[
+  {
+    "id": "qsg",
+    "title": "Quick Start Guide",
+    "file": "files/quick-start-guide.pdf",
+    "pages": [
+      {
+        "page": 1,
+        "chars": 498,
+        "image": "/docs/qsg-p1.png",
+        "width": 1166,
+        "height": 1654,
+        "textOnly": true
+      },
+      {
+        "page": 2,
+        "chars": 60,
+        "image": "/docs/qsg-p2.png",
+        "width": 1166,
+        "height": 1654,
+        "textOnly": true
+      }
+    ]
+  },
+  {
+    "id": "sel",
+    "title": "How To Choose A Welder (process selection chart)",
+    "file": "files/selection-chart.pdf",
+    "pages": [
+      {
+        "page": 1,
+        "chars": 0,
+        "image": "/docs/sel-p1.png",
+        "width": 3334,
+        "height": 3334,
+        "textOnly": false
+      }
+    ]
+  },
+  {
+    "id": "decal",
+    "title": "Settings Chart (decal inside the welder door)",
+    "file": "files/product-inside.webp",
+    "pages": [
+      {
+        "page": 1,
+        "chars": 0,
+        "image": "/docs/decal.png",
+        "textOnly": false
+      }
+    ]
+  }
+]

@@ -1,0 +1,53 @@
+{
+  "_comment": [
+    "Real weld photographs, used as eval fixtures so the weld-diagnosis tests are",
+    "not run against the manual's own artwork. Testing a system on its source",
+    "material is circular: the agent can recognise a crop of page 35 as a crop of",
+    "page 35, and score well without looking at anything.",
+    "",
+    "All are freely licensed and credited below. not-a-weld-machine.webp is the",
+    "challenge repo's own product.webp, used as a negative control."
+  ],
+  "images": [
+    {
+      "file": "stainless-seam.jpg",
+      "title": "Roostevabaterase keevisõmblus (stainless steel weld seam)",
+      "author": "Tanel Eensoo",
+      "license": "CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Roostevabaterase_keevis%C3%B5mblus.jpg",
+      "usedFor": "A real, evenly rippled bead. Tests that a sound weld is allowed to be sound."
+    },
+    {
+      "file": "flash-butt.jpg",
+      "title": "Weld of flash-butt welding",
+      "author": "Sergey82k",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Weld_of_flash-butt_welding.jpg",
+      "usedFor": "A genuine weld made by a process this machine does not have. Tests that the agent engages without forcing it into one of the manual's six wire-weld panels."
+    },
+    {
+      "file": "tig-bead.jpg",
+      "title": "TIG Weld low magnification",
+      "author": "Dr. Crash (commonswiki)",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:TIG_Weld_low_magnification.jpg",
+      "usedFor": "Held back from the scored set: it is an annotated micrograph with 'weld bead' and '~5 mm' printed on it, so it leaks its own answer."
+    },
+    {
+      "file": "bead-on-plate.png",
+      "title": "BeadOnPlateTest",
+      "author": "Dumontierc",
+      "license": "CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:BeadOnPlateTest.png",
+      "usedFor": "Held back from the scored set: 548x114 and too low-resolution to judge a bead profile from."
+    },
+    {
+      "file": "not-a-weld-machine.webp",
+      "title": "Vulcan OmniPro 220 product photo",
+      "author": "Harbor Freight / prox-technologies",
+      "license": "from the challenge repo (product.webp)",
+      "source": "https://github.com/prox-technologies/prox-challenge",
+      "usedFor": "Negative control. Shown the machine, the agent must decline to diagnose a weld rather than find a defect in it."
+    }
+  ]
+}

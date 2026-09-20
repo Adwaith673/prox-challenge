@@ -1,0 +1,290 @@
+[
+  {
+    "page": 1,
+    "chars": 1251,
+    "rasterImages": 1,
+    "vectorDrawings": 33
+  },
+  {
+    "page": 2,
+    "chars": 2904,
+    "rasterImages": 0,
+    "vectorDrawings": 54
+  },
+  {
+    "page": 3,
+    "chars": 2501,
+    "rasterImages": 0,
+    "vectorDrawings": 20
+  },
+  {
+    "page": 4,
+    "chars": 3461,
+    "rasterImages": 0,
+    "vectorDrawings": 14
+  },
+  {
+    "page": 5,
+    "chars": 2630,
+    "rasterImages": 0,
+    "vectorDrawings": 12
+  },
+  {
+    "page": 6,
+    "chars": 2289,
+    "rasterImages": 0,
+    "vectorDrawings": 147
+  },
+  {
+    "page": 7,
+    "chars": 1194,
+    "rasterImages": 0,
+    "vectorDrawings": 172
+  },
+  {
+    "page": 8,
+    "chars": 489,
+    "rasterImages": 0,
+    "vectorDrawings": 463
+  },
+  {
+    "page": 9,
+    "chars": 312,
+    "rasterImages": 0,
+    "vectorDrawings": 3823
+  },
+  {
+    "page": 10,
+    "chars": 1384,
+    "rasterImages": 0,
+    "vectorDrawings": 1855
+  },
+  {
+    "page": 11,
+    "chars": 1204,
+    "rasterImages": 0,
+    "vectorDrawings": 5622
+  },
+  {
+    "page": 12,
+    "chars": 863,
+    "rasterImages": 0,
+    "vectorDrawings": 173
+  },
+  {
+    "page": 13,
+    "chars": 1470,
+    "rasterImages": 0,
+    "vectorDrawings": 10756
+  },
+  {
+    "page": 14,
+    "chars": 2294,
+    "rasterImages": 0,
+    "vectorDrawings": 2363
+  },
+  {
+    "page": 15,
+    "chars": 1587,
+    "rasterImages": 0,
+    "vectorDrawings": 3168
+  },
+  {
+    "page": 16,
+    "chars": 2018,
+    "rasterImages": 0,
+    "vectorDrawings": 4153
+  },
+  {
+    "page": 17,
+    "chars": 2505,
+    "rasterImages": 0,
+    "vectorDrawings": 5850
+  },
+  {
+    "page": 18,
+    "chars": 1715,
+    "rasterImages": 0,
+    "vectorDrawings": 688
+  },
+  {
+    "page": 19,
+    "chars": 2958,
+    "rasterImages": 2,
+    "vectorDrawings": 488
+  },
+  {
+    "page": 20,
+    "chars": 1574,
+    "rasterImages": 4,
+    "vectorDrawings": 224
+  },
+  {
+    "page": 21,
+    "chars": 1618,
+    "rasterImages": 5,
+    "vectorDrawings": 62
+  },
+  {
+    "page": 22,
+    "chars": 1581,
+    "rasterImages": 2,
+    "vectorDrawings": 156
+  },
+  {
+    "page": 23,
+    "chars": 2396,
+    "rasterImages": 4,
+    "vectorDrawings": 1126
+  },
+  {
+    "page": 24,
+    "chars": 1414,
+    "rasterImages": 0,
+    "vectorDrawings": 5805
+  },
+  {
+    "page": 25,
+    "chars": 1834,
+    "rasterImages": 0,
+    "vectorDrawings": 582
+  },
+  {
+    "page": 26,
+    "chars": 2023,
+    "rasterImages": 1,
+    "vectorDrawings": 37
+  },
+  {
+    "page": 27,
+    "chars": 1474,
+    "rasterImages": 0,
+    "vectorDrawings": 2332
+  },
+  {
+    "page": 28,
+    "chars": 1630,
+    "rasterImages": 0,
+    "vectorDrawings": 163
+  },
+  {
+    "page": 29,
+    "chars": 3362,
+    "rasterImages": 148,
+    "vectorDrawings": 494
+  },
+  {
+    "page": 30,
+    "chars": 2253,
+    "rasterImages": 4,
+    "vectorDrawings": 73
+  },
+  {
+    "page": 31,
+    "chars": 3123,
+    "rasterImages": 2,
+    "vectorDrawings": 12
+  },
+  {
+    "page": 32,
+    "chars": 1625,
+    "rasterImages": 5,
+    "vectorDrawings": 81
+  },
+  {
+    "page": 33,
+    "chars": 2418,
+    "rasterImages": 4,
+    "vectorDrawings": 9
+  },
+  {
+    "page": 34,
+    "chars": 1927,
+    "rasterImages": 0,
+    "vectorDrawings": 63
+  },
+  {
+    "page": 35,
+    "chars": 1126,
+    "rasterImages": 13,
+    "vectorDrawings": 178
+  },
+  {
+    "page": 36,
+    "chars": 2379,
+    "rasterImages": 1,
+    "vectorDrawings": 63
+  },
+  {
+    "page": 37,
+    "chars": 1853,
+    "rasterImages": 4,
+    "vectorDrawings": 111
+  },
+  {
+    "page": 38,
+    "chars": 982,
+    "rasterImages": 7,
+    "vectorDrawings": 200
+  },
+  {
+    "page": 39,
+    "chars": 2033,
+    "rasterImages": 0,
+    "vectorDrawings": 38
+  },
+  {
+    "page": 40,
+    "chars": 1536,
+    "rasterImages": 0,
+    "vectorDrawings": 141
+  },
+  {
+    "page": 41,
+    "chars": 2418,
+    "rasterImages": 0,
+    "vectorDrawings": 676
+  },
+  {
+    "page": 42,
+    "chars": 3553,
+    "rasterImages": 0,
+    "vectorDrawings": 58
+  },
+  {
+    "page": 43,
+    "chars": 3312,
+    "rasterImages": 0,
+    "vectorDrawings": 50
+  },
+  {
+    "page": 44,
+    "chars": 2061,
+    "rasterImages": 0,
+    "vectorDrawings": 51
+  },
+  {
+    "page": 45,
+    "chars": 824,
+    "rasterImages": 0,
+    "vectorDrawings": 1241
+  },
+  {
+    "page": 46,
+    "chars": 2518,
+    "rasterImages": 0,
+    "vectorDrawings": 459
+  },
+  {
+    "page": 47,
+    "chars": 320,
+    "rasterImages": 0,
+    "vectorDrawings": 26144
+  },
+  {
+    "page": 48,
+    "chars": 1822,
+    "rasterImages": 0,
+    "vectorDrawings": 3
+  }
+]

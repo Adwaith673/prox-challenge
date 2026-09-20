@@ -1,0 +1,96 @@
+/* Interactive widgets.
+
+   Same card language as a verified diagram, because they carry the same
+   guarantee: the controls are live, the values behind them come from the
+   verified tables, and a refusal is rendered as plainly as an answer. */
+
+.widget {
+  background: var(--card);
+  border: 1px solid var(--line-2);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-m);
+  overflow: hidden;
+  margin: 14px 0 4px;
+}
+.widget .whd { display: flex; align-items: flex-start; gap: 12px; padding: 16px 18px 0; }
+.widget .whd h4 { margin: 0; font-size: 15.5px; font-weight: 700; letter-spacing: -0.01em; }
+.widget .whd .sub { margin: 2px 0 0; font-size: 12px; color: var(--ink-3); }
+.wbody { padding: 14px 18px 18px; }
+
+.wrow { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 13px; }
+.wfield { display: flex; flex-direction: column; gap: 5px; }
+.wfield label {
+  font-size: 10.5px; font-weight: 600; color: var(--ink-4);
+  letter-spacing: 0.03em; text-transform: uppercase;
+}
+.wfield select,
+.wfield input {
+  font-family: var(--ui); font-size: 13px; color: var(--ink); background: #fff;
+  border: 1px solid var(--line); border-radius: 9px; padding: 7px 10px;
+  outline: none; min-width: 118px;
+}
+.wfield select:focus,
+.wfield input:focus { border-color: var(--accent); }
+
+/* Answer, caveat, refusal — three states, visibly different. */
+.wout {
+  border-radius: var(--r-md); padding: 14px 16px; font-size: 14px; line-height: 1.5;
+  background: #f1f7f3; border: 1px solid #d5e7dd;
+}
+.wout.warn { background: #fdf5ec; border-color: #f0ddc6; }
+.wout.stop { background: #fdf1ee; border-color: #f3d6cd; }
+.wout .big {
+  display: block; font-size: 27px; font-weight: 700;
+  letter-spacing: -0.02em; margin-bottom: 3px;
+}
+.wout .big.small { font-size: 16px; }
+.wout .note { display: block; font-size: 12.5px; color: var(--ink-2); margin-top: 6px; }
+.wout .src {
+  display: block; font-family: var(--mono); font-size: 10.5px;
+  color: var(--ink-4); margin-top: 9px;
+}
+.wout code {
+  font-family: var(--mono); font-size: 0.86em;
+  background: rgba(24, 26, 29, 0.05); padding: 1px 5px; border-radius: 4px;
+}
+
+.steps { display: flex; flex-direction: column; gap: 7px; }
+.step {
+  display: flex; gap: 11px; align-items: flex-start;
+  border: 1px solid var(--line); border-radius: var(--r-md);
+  padding: 11px 13px; background: #fff;
+}
+/* An excluded cause stays visible rather than vanishing: showing what does NOT
+   apply to your process, and why, is the useful half of the answer. */
+.step.off { opacity: 0.45; }
+.step .n {
+  width: 21px; height: 21px; border-radius: 50%; background: var(--ink); color: #fff;
+  flex: none; display: grid; place-items: center; font-size: 11px; font-weight: 700;
+  margin-top: 1px;
+}
+.step.off .n { background: var(--ink-4); }
+.step b { display: block; font-size: 13.5px; font-weight: 600; margin-bottom: 2px; }
+.step span { display: block; font-size: 12.5px; color: var(--ink-2); }
+.step em { display: block; font-style: normal; font-size: 11.5px; color: var(--pos); margin-top: 4px; }
+
+.known { display: flex; flex-direction: column; gap: 7px; margin-top: 12px; }
+.known div { display: flex; gap: 10px; font-size: 13px; align-items: center; }
+.known b { font-weight: 600; min-width: 168px; }
+.known code { font-family: var(--mono); font-size: 12px; }
+.known i {
+  font-style: normal; font-family: var(--mono); font-size: 10.5px;
+  color: var(--ink-4); margin-left: auto;
+}
+.hatch {
+  background-image: repeating-linear-gradient(45deg, #f2f0ec 0 5px, #e5e1d9 5px 10px);
+  border: 1px solid var(--line); border-radius: 7px; padding: 8px 11px;
+  font-size: 12.5px; color: #6c6459; font-weight: 600;
+}
+
+/* A widget whose data is partly image-sourced must not wear the same badge as
+   one whose every value traces to a page of text. */
+.badge.amber {
+  background: #fdf5ec;
+  border-color: #f0ddc6;
+  color: #8a6534;
+}

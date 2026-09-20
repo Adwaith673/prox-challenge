@@ -1,0 +1,89 @@
+{
+  "table": "diagnosis",
+  "title": "Weld defect diagnosis, process-gated",
+  "note": "Defect causes are PROCESS-CONDITIONAL and a naive retriever gets this wrong. Porosity has six printed causes for wire welding (p.37) but only two for stick (p.40) - handing a stick user 'increase gas flow' is nonsense, SMAW uses no shielding gas. There is a third level of gating inside the wire section itself: two causes are printed '(MIG only)', so they do not apply to self-shielded flux-core, which also runs gasless.",
+  "symptoms": [
+    {
+      "id": "porosity_wire",
+      "symptom": "porosity",
+      "appliesTo": ["MIG"],
+      "variants": ["solid_wire_gas_shielded", "flux_cored_self_shielded", "spool_gun"],
+      "definition": "Small cavities or holes in the bead.",
+      "page": 37,
+      "quote": "Porosity Small cavities or holes in the bead. POSSIBLE CAUSES AND SOLUTIONS 1. Incorrect polarity: Check that polarity is set correctly for type of welding. 2. Insufficient shielding gas (MIG only): Increase flow of gas. Clean nozzle. Maintain proper CTWD. 3. Incorrect shielding gas (MIG only): Use shielding gas recommended by wire supplier. 4. Dirty workpiece or welding wire: Clean workpiece down to bare metal. Make certain that wire is clean and free from oil, coatings, and other residues. 5. Inconsistent travel speed: Maintain steady travel speed. 6. CTWD too long: Reduce CTWD.",
+      "causes": [
+        {
+          "n": 1,
+          "cause": "Incorrect polarity",
+          "fix": "Check that polarity is set correctly for type of welding.",
+          "gasShieldedOnly": false
+        },
+        {
+          "n": 2,
+          "cause": "Insufficient shielding gas (MIG only)",
+          "fix": "Increase flow of gas. Clean nozzle. Maintain proper CTWD.",
+          "gasShieldedOnly": true
+        },
+        {
+          "n": 3,
+          "cause": "Incorrect shielding gas (MIG only)",
+          "fix": "Use shielding gas recommended by wire supplier.",
+          "gasShieldedOnly": true
+        },
+        {
+          "n": 4,
+          "cause": "Dirty workpiece or welding wire",
+          "fix": "Clean workpiece down to bare metal. Make certain that wire is clean and free from oil, coatings, and other residues.",
+          "gasShieldedOnly": false
+        },
+        {
+          "n": 5,
+          "cause": "Inconsistent travel speed",
+          "fix": "Maintain steady travel speed.",
+          "gasShieldedOnly": false
+        },
+        {
+          "n": 6,
+          "cause": "CTWD too long",
+          "fix": "Reduce CTWD.",
+          "gasShieldedOnly": false
+        }
+      ]
+    },
+    {
+      "id": "porosity_stick",
+      "symptom": "porosity",
+      "appliesTo": ["Stick"],
+      "variants": ["dc_stick"],
+      "definition": "Small cavities or holes in the bead.",
+      "page": 40,
+      "quote": "Porosity - Small cavities or holes in the bead. POSSIBLE CAUSES AND SOLUTIONS TOP VIEW 1. Dirty workpiece or fill material: Clean workpiece down to bare metal. Make certain that fill material and Electrode are clean and free from oil, coatings, and other residues. 2. Inconsistent welding speed: Maintain steady weld speed.",
+      "causes": [
+        {
+          "n": 1,
+          "cause": "Dirty workpiece or fill material",
+          "fix": "Clean workpiece down to bare metal. Make certain that fill material and Electrode are clean and free from oil, coatings, and other residues.",
+          "gasShieldedOnly": false
+        },
+        {
+          "n": 2,
+          "cause": "Inconsistent welding speed",
+          "fix": "Maintain steady weld speed.",
+          "gasShieldedOnly": false
+        }
+      ]
+    }
+  ],
+  "exclusionRules": [
+    {
+      "when": { "process": "Stick" },
+      "excludeCausesMentioning": ["shielding gas", "CTWD", "polarity"],
+      "reason": "Stick welding uses no shielding gas and the manual's stick porosity section (p.40) prints only two causes. Do not import the wire-welding causes from p.37."
+    },
+    {
+      "when": { "process": "MIG", "variant": "flux_cored_self_shielded" },
+      "excludeCausesWhere": { "gasShieldedOnly": true },
+      "reason": "Self-shielded flux-core runs gasless, so the two causes the manual marks '(MIG only)' cannot apply."
+    }
+  ]
+}

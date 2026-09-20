@@ -1,0 +1,178 @@
+{
+  "_comment": [
+    "Prox asked for 'a settings configurator that takes process + material + thickness",
+    "and outputs recommended wire speed and voltage'. There is no such table in any of",
+    "the three documents, and the reason is the interesting part: this is an Auto Weld",
+    "(synergic) machine. You enter wire/rod/electrode diameter and material thickness,",
+    "and the welder derives amperage and voltage itself. The manual says so outright on",
+    "page 20 -- 'the white mark on the line shows the recommended setting for your",
+    "wire/electrode diameter and workpiece thickness'.",
+    "",
+    "So the honest configurator does not refuse and does not invent a wire-speed table.",
+    "It returns the procedure the machine actually uses, per process, verbatim, with the",
+    "page you can check it on. Everything below is a substring of its cited page."
+  ],
+  "synergic": {
+    "page": 20,
+    "claim": "The machine derives wire feed speed and voltage from wire diameter and material thickness; the operator does not look them up.",
+    "quote": "Note: If the Wire Feed Speed or Voltage settings are adjusted manually, the white mark on the line shows the recommended setting for your wire/electrode diameter and workpiece thickness.",
+    "approximateNote": {
+      "_comment": "Decal only. The word 'approximate' appears ZERO times in all 48 pages of the owner's manual -- this caveat exists nowhere but the sticker inside the door, which is exactly why the decal had to be ingested as a source.",
+      "source": "decal",
+      "textVerifiable": false,
+      "quote": "Auto Weld Settings are approximate. Adjust settings as necessary."
+    }
+  },
+  "processes": [
+    {
+      "id": "mig_flux",
+      "process": "MIG",
+      "alsoCovers": [
+        "Flux-Cored"
+      ],
+      "page": 20,
+      "screenLabel": "MIG / Flux",
+      "gasScfh": {
+        "min": 20,
+        "max": 30
+      },
+      "youSet": [
+        {
+          "knob": "Left Knob",
+          "sets": "wire diameter"
+        },
+        {
+          "knob": "Right Knob",
+          "sets": "material thickness"
+        }
+      ],
+      "machineDerives": [
+        "Wire Feed Speed (Amperage)",
+        "Voltage"
+      ],
+      "adjustStep": "Turn Left Knob to adjust Wire Feed Speed (Amperage). Turn Right Knob to adjust Voltage.",
+      "onScreenExample": {
+        "_comment": "The manual's own screenshot, reproduced on the door decal. The page interleaves two screens, so this is shown as an example of what the display looks like -- NOT asserted as the recommended pair for a particular job.",
+        "reads": "121 A / 13.8 V",
+        "shownWith": ".025\" wire, 24 Ga material"
+      },
+      "optionalSettings": [
+        "Run-In WFS",
+        "Inductance",
+        "Spot Timer",
+        "Recall Setting",
+        "Save Setting"
+      ],
+      "quote": "a. Polarity and Gas Settings: \u2022 Plug cables in according to screen. \u2022 Connect gas according to screen. \u2022 Set SCFH between 20-30. b. Set Wire Diameter and Material Thickness: \u2022 Turn Left Knob to set wire diameter. \u2022 Turn Right Knob to set material thickness.",
+      "decalScreens": {
+        "_comment": "Transcribed from the door decal panel for this process. Image-only: these are what the LCD shows in the decal's illustration, not a recommendation for any particular job.",
+        "source": "decal",
+        "textVerifiable": false,
+        "diameters": [
+          ".025\""
+        ],
+        "thicknesses": [
+          "24 Ga"
+        ],
+        "reads": {
+          "amps": 121,
+          "volts": 13.8
+        }
+      }
+    },
+    {
+      "id": "tig",
+      "process": "TIG",
+      "alsoCovers": [],
+      "page": 30,
+      "screenLabel": "TIG",
+      "gasScfh": {
+        "min": 10,
+        "max": 25
+      },
+      "youSet": [
+        {
+          "knob": "Left Knob",
+          "sets": "rod diameter"
+        },
+        {
+          "knob": "Right Knob",
+          "sets": "material thickness"
+        }
+      ],
+      "machineDerives": [
+        "output amperage"
+      ],
+      "adjustStep": "Turn Left Knob to adjust output amperage. Turn Right Knob to ON to energize TIG Torch.",
+      "optionalSettings": [
+        "Recall Setting",
+        "Save Setting"
+      ],
+      "quote": "a. Polarity and Gas Settings: \u2022 Plug cables in according to screen. \u2022 Connect gas according to screen. \u2022 Set SCFH between 10-25. b. Set Rod Diameter and Material Thickness: \u2022 Turn Left Knob to set rod diameter. \u2022 Turn Right Knob to set material thickness.",
+      "decalScreens": {
+        "_comment": "Transcribed from the door decal panel for this process. Image-only: these are what the LCD shows in the decal's illustration, not a recommendation for any particular job.",
+        "source": "decal",
+        "textVerifiable": false,
+        "diameters": [
+          "1/16\""
+        ],
+        "thicknesses": [
+          "24 Ga"
+        ],
+        "reads": {
+          "amps": 30,
+          "volts": 0.0
+        }
+      }
+    },
+    {
+      "id": "stick",
+      "process": "Stick",
+      "alsoCovers": [],
+      "page": 32,
+      "screenLabel": "Stick",
+      "gasScfh": null,
+      "youSet": [
+        {
+          "knob": "Main Control Knob",
+          "sets": "electrode type"
+        },
+        {
+          "knob": "Left Knob",
+          "sets": "electrode diameter"
+        },
+        {
+          "knob": "Right Knob",
+          "sets": "material thickness"
+        }
+      ],
+      "machineDerives": [
+        "output amperage"
+      ],
+      "adjustStep": "Turn Left Knob to adjust output amperage. Turn Right Knob to ON to energize Electrode Holder.",
+      "optionalSettings": [
+        "Hot Start",
+        "Arc Force",
+        "Recall Setting",
+        "Save Setting"
+      ],
+      "quote": "b. Set Electrode type: \u2022 Turn Main Control Knob to set electrode type. c. Set Electrode Diameter and Material Thickness: \u2022 Turn Left Knob to set electrode diameter. \u2022 Turn Right Knob to set material thickness.",
+      "decalScreens": {
+        "_comment": "Transcribed from the door decal panel for this process. Image-only: these are what the LCD shows in the decal's illustration, not a recommendation for any particular job.",
+        "source": "decal",
+        "textVerifiable": false,
+        "diameters": [
+          "3/32\""
+        ],
+        "thicknesses": [
+          "16 Ga"
+        ],
+        "reads": {
+          "amps": 60,
+          "volts": 0.0
+        },
+        "electrodeType": "60xx"
+      }
+    }
+  ]
+}

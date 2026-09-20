@@ -1,0 +1,71 @@
+{
+  "table": "polarity",
+  "title": "Polarity setup by process, Vulcan OmniPro 220",
+  "note": "Polarity INVERTS between solid-wire MIG and self-shielded flux-core on the same gun. This table is the sole authority for which lead enters which socket; every wiring diagram the agent renders is derived from these rows and verified against them.",
+  "rows": [
+    {
+      "id": "gmaw_solid_gas",
+      "process": "MIG",
+      "variant": "solid_wire_gas_shielded",
+      "label": "Solid-core MIG (gas shielded)",
+      "convention": "DCEP",
+      "electrodeDevice": "mig_gun",
+      "electrodeLead": "positive",
+      "workLead": "negative",
+      "page": 14,
+      "quote": "Ground Clamp Cable in Negative Socket DCEP Solid Core (Gas Shielded) Polarity Setup Wire Feed Power Cable in Positive Socket"
+    },
+    {
+      "id": "fcaw_self_shielded",
+      "process": "MIG",
+      "variant": "flux_cored_self_shielded",
+      "label": "Flux-cored, self-shielded (gasless)",
+      "convention": "DCEN",
+      "electrodeDevice": "mig_gun",
+      "electrodeLead": "negative",
+      "workLead": "positive",
+      "page": 13,
+      "quote": "DCEN Direct Current Electrode Negative Wire Setup for Flux-Cored (gasless) welding: Plug Ground Clamp Cable into Positive (+) Socket. Plug Wire Feed Power Cable into Negative (-) Socket."
+    },
+    {
+      "id": "spool_gun_aluminum",
+      "process": "MIG",
+      "variant": "spool_gun",
+      "label": "Optional spool gun (aluminum)",
+      "convention": "DCEP",
+      "electrodeDevice": "spool_gun",
+      "electrodeLead": "positive",
+      "workLead": "negative",
+      "page": 17,
+      "quote": "To set up optional Spool Gun (sold separately), plug Ground Clamp Cable into Negative (-) Socket. Plug Wire Feed Power Cable into Positive (+) Socket."
+    },
+    {
+      "id": "gtaw_tig",
+      "process": "TIG",
+      "variant": "dc_tig",
+      "label": "DC TIG",
+      "convention": "DCEN",
+      "electrodeDevice": "tig_torch",
+      "electrodeLead": "negative",
+      "workLead": "positive",
+      "page": 24,
+      "quote": "1. Plug Ground Clamp Cable into Positive Socket. Twist clockwise all the way to lock in place. 2. Plug TIG Torch Cable (TIG Torch sold separately) into Negative Socket."
+    },
+    {
+      "id": "smaw_stick",
+      "process": "Stick",
+      "variant": "dc_stick",
+      "label": "Stick (SMAW)",
+      "convention": "DCEP",
+      "electrodeDevice": "electrode_holder",
+      "electrodeLead": "positive",
+      "workLead": "negative",
+      "page": 27,
+      "quote": "Electrode Holder Cable in Positive Socket Ground Clamp Cable in Negative Socket"
+    }
+  ],
+  "corroboration": {
+    "page": 42,
+    "quote": "DCEP for MIG and DCEN for Flux-Cored self-shielded welding"
+  }
+}

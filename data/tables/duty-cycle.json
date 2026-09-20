@@ -1,0 +1,118 @@
+{
+  "table": "duty_cycle",
+  "title": "Rated duty cycles, Vulcan OmniPro 220",
+  "note": "Duty cycle CANNOT be keyed on amperage alone. 175 A at 240 V input is 30% in TIG but 25% in Stick, because arc voltage differs (17 V vs 27 V) and therefore so does dissipated power. The lookup key is the triple (process, inputVoltage, amperage). Never interpolate, never extrapolate: duty cycle is a tested thermal result under IEC 60974-1, not a formula.",
+  "sources": {
+    "specTable": {
+      "page": 7,
+      "note": "Gives only TWO points per process/voltage. An agent reading only page 7 will wrongly conclude no 60% figure exists."
+    },
+    "ratingPlate": {
+      "pages": [14, 25],
+      "note": "Gives THREE points per process/voltage plus arc voltage U2. This is the richer authority."
+    }
+  },
+  "rows": [
+    {
+      "id": "mig_240",
+      "process": "MIG",
+      "inputVoltage": 240,
+      "outputRange": { "minAmps": 30, "minVolts": 15.5, "maxAmps": 220, "maxVolts": 25 },
+      "points": [
+        { "dutyPct": 25, "amps": 200, "arcVolts": 24 },
+        { "dutyPct": 60, "amps": 130, "arcVolts": 20.5 },
+        { "dutyPct": 100, "amps": 115, "arcVolts": 19.75 }
+      ],
+      "maxPublishedAmps": 200,
+      "unpublishedAbove": 200,
+      "unpublishedNote": "The machine reaches 220 A but no duty cycle is published above 200 A. Refuse; do not extrapolate.",
+      "page": 14,
+      "quote": "30A/15.5V to 220A/25V X 25% 60% 100% U0 = 86V I2 200A 130A 115A U2 24V 20.5V 19.75V"
+    },
+    {
+      "id": "stick_240",
+      "process": "Stick",
+      "inputVoltage": 240,
+      "outputRange": { "minAmps": 10, "minVolts": 20.4, "maxAmps": 175, "maxVolts": 27 },
+      "points": [
+        { "dutyPct": 25, "amps": 175, "arcVolts": 27 },
+        { "dutyPct": 60, "amps": 115, "arcVolts": 24.6 },
+        { "dutyPct": 100, "amps": 100, "arcVolts": 24 }
+      ],
+      "maxPublishedAmps": 175,
+      "unpublishedAbove": null,
+      "page": 14,
+      "quote": "10A/20.4V to 175A/27V X 25% 60% 100% U0 = 86V I2 175A 115A 100A U2 27V 24.6V 24V"
+    },
+    {
+      "id": "tig_240",
+      "process": "TIG",
+      "inputVoltage": 240,
+      "outputRange": { "minAmps": 10, "minVolts": 10.4, "maxAmps": 175, "maxVolts": 17 },
+      "points": [
+        { "dutyPct": 30, "amps": 175, "arcVolts": 17 },
+        { "dutyPct": 60, "amps": 125, "arcVolts": 15 },
+        { "dutyPct": 100, "amps": 105, "arcVolts": 14.2 }
+      ],
+      "maxPublishedAmps": 175,
+      "unpublishedAbove": null,
+      "page": 14,
+      "quote": "10A/10.4V to 175A/17V X 30% 60% 100% U0 = 86V I2 175A 125A 105A U2 17V 15V 14.2V"
+    },
+    {
+      "id": "mig_120",
+      "process": "MIG",
+      "inputVoltage": 120,
+      "outputRange": { "minAmps": 30, "minVolts": 15.5, "maxAmps": 140, "maxVolts": 21 },
+      "points": [
+        { "dutyPct": 40, "amps": 100, "arcVolts": 19 },
+        { "dutyPct": 60, "amps": 85, "arcVolts": 18.25 },
+        { "dutyPct": 100, "amps": 75, "arcVolts": 17.75 }
+      ],
+      "maxPublishedAmps": 100,
+      "unpublishedAbove": 100,
+      "unpublishedNote": "The machine reaches 140 A on 120 V but no duty cycle is published above 100 A. Refuse; do not extrapolate.",
+      "page": 14,
+      "quote": "30A/15.5V to 140A/21V X 40% 60% 100% U0 = 86V I2 100A 85A 75A U2 19V 18.25V 17.75V"
+    },
+    {
+      "id": "stick_120",
+      "process": "Stick",
+      "inputVoltage": 120,
+      "outputRange": { "minAmps": 10, "minVolts": 20.4, "maxAmps": 80, "maxVolts": 23.2 },
+      "points": [
+        { "dutyPct": 40, "amps": 80, "arcVolts": 23.2 },
+        { "dutyPct": 60, "amps": 70, "arcVolts": 22.8 },
+        { "dutyPct": 100, "amps": 60, "arcVolts": 22.4 }
+      ],
+      "maxPublishedAmps": 80,
+      "unpublishedAbove": null,
+      "page": 14,
+      "quote": "10A/20.4V to 80A/23.2V X 40% 60% 100% U0 = 86V I2 80A 70A 60A U2 23.2V 22.8V 22.4V"
+    },
+    {
+      "id": "tig_120",
+      "process": "TIG",
+      "inputVoltage": 120,
+      "outputRange": { "minAmps": 10, "minVolts": 10.4, "maxAmps": 125, "maxVolts": 15 },
+      "points": [
+        { "dutyPct": 40, "amps": 125, "arcVolts": 15 },
+        { "dutyPct": 60, "amps": 105, "arcVolts": 14.2 },
+        { "dutyPct": 100, "amps": 90, "arcVolts": 13.6 }
+      ],
+      "maxPublishedAmps": 125,
+      "unpublishedAbove": null,
+      "page": 14,
+      "quote": "10A/10.4V to 125A/15V X 40% 60% 100% U0 = 86V I2 125A 105A 90A U2 15V 14.2V 13.6V"
+    }
+  ],
+  "specTableCorroboration": [
+    { "page": 7, "quote": "Rated Duty Cycles 40% @ 100 A 100% @ 75 A 25% @ 200 A 100% @ 115 A", "process": "MIG" },
+    { "page": 7, "quote": "Rated Duty Cycles 40% @ 125 A 100% @ 90 A 30% @ 175 A 100% @ 105 A", "process": "TIG" },
+    { "page": 7, "quote": "Rated Duty Cycles 40% @ 80 A 100% @ 60 A 25% @ 175 A 100% @ 100 A", "process": "Stick" }
+  ],
+  "definition": {
+    "periodMinutes": 10,
+    "note": "Duty cycle is the number of minutes within a 10-minute period the machine may weld at the stated current. 25% at 200 A means 2.5 minutes welding, 7.5 minutes rest."
+  }
+}

@@ -1,0 +1,10 @@
+# Built on Windows, reviewed on macOS. Without this, every text file lands in the
+# reviewer's checkout with CRLF endings and the shell scripts in the README stop
+# working for them.
+* text=auto eol=lf
+
+# Binary: never normalise, never diff.
+*.pdf   binary
+*.png   binary
+*.jpg   binary
+*.webp  binary

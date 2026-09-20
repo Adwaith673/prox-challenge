@@ -1,0 +1,65 @@
+{
+  "table": "unanswerable",
+  "title": "Questions this manual cannot answer, and one place it contradicts itself",
+  "note": "These are first-class retrievable facts, not prompt instructions. Grounding refusal in data is what makes it reliable: the agent declines because a tool told it the answer does not exist, not because a system prompt asked it to be careful.",
+  "gaps": [
+    {
+      "id": "settings_matrix_not_in_manual",
+      "triggers": [
+        "wire feed speed", "WFS", "what voltage", "what settings", "in/min",
+        "amps for thickness", "gas flow for thickness", "tungsten size"
+      ],
+      "claim": "The thickness x wire-diameter x gas x voltage x wire-feed-speed matrix is NOT in this manual. It is a decal on the inside of the welder door. The tungsten sizing chart is a separate decal on top of the welder.",
+      "evidence": {
+        "absence": {
+          "probe": "in/min",
+          "occurrencesInManual": 0,
+          "note": "Wire feed speed values would be printed in in/min. The string never appears across all 48 pages."
+        },
+        "pointers": [
+          { "page": 14, "quote": "Refer to the Settings Chart on the inside of the Welder door." },
+          { "page": 21, "quote": "Set Flow Gauge to SCFH value indicated on Settings Chart." },
+          { "page": 26, "quote": "Consult Settings Chart, on top of Welder, to determine proper Tungsten Electrode size to be used with thickness of material to be welded." },
+          { "page": 30, "quote": "Set Flow Gauge to SCFH value indicated on the Settings Chart on the inside of the Welder door." },
+          { "page": 42, "quote": "Ensure gas flow rate is set according to Settings Chart." }
+        ]
+      },
+      "correctBehavior": "Refuse to state a voltage or wire-feed-speed number. Render the matrix with its real axes and every cell hatched as not-in-manual, and direct the user to the door decal or the welder's own synergic screen, which computes these from process + wire diameter + material thickness + gas.",
+      "neverDo": "Do not infer settings from general welding knowledge. Do not interpolate from the synergic examples. We cannot cite a decal we do not have."
+    },
+    {
+      "id": "duty_cycle_above_published",
+      "triggers": ["duty cycle at 220", "duty cycle at 140", "max duty cycle"],
+      "claim": "The machine's output range exceeds its published duty-cycle points in MIG on both input voltages. 240 V MIG reaches 220 A but nothing is published above 200 A; 120 V MIG reaches 140 A but nothing is published above 100 A.",
+      "evidence": {
+        "table": "duty_cycle",
+        "rows": ["mig_240", "mig_120"],
+        "note": "See outputRange.maxAmps versus maxPublishedAmps."
+      },
+      "correctBehavior": "State the highest published point and that nothing is published above it. Render the duty-cycle matrix with the out-of-range column present and hatched, so the hole in the data is visible rather than described.",
+      "neverDo": "Never extrapolate or interpolate a duty cycle. It is a tested thermal result under IEC 60974-1, not a function of amperage."
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "ac_tig_aluminum",
+      "page": 28,
+      "quote": "AC TIG Welding is used to weld aluminum using a TIG Rod and shielding gas.",
+      "refutedBy": [
+        {
+          "page": 7,
+          "quote": "Maximum OCV 86 VDC",
+          "reason": "Output is DC only. The machine has no AC output, so it cannot perform AC TIG."
+        },
+        {
+          "page": 7,
+          "quote": "Weldable Materials Mild Steel, Stainless Steel, Chrome Moly",
+          "reason": "The TIG specification does not list aluminum as a weldable material."
+        }
+      ],
+      "resolution": "The p.28 line is generic boilerplate about the AC TIG process in general; it does not describe a capability of this machine. Aluminum on the OmniPro 220 is welded with the optional spool gun using MIG, not TIG.",
+      "correctBehavior": "Do not affirm that this machine can AC TIG aluminum. Surface the contradiction explicitly, cite both pages, and point the user to the spool gun path.",
+      "attachToRetrievalOf": [28]
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "_comment": [
+    "Transcribed by hand from selection-chart.pdf -- the 'HOW TO CHOOSE A WELDER' chart.",
+    "",
+    "That file is one page, zero characters of text, one 1200x1200 JPEG. Every fact",
+    "below exists ONLY as pixels. Nothing here can be checked against page text the way",
+    "the other four tables are, so this table is marked textVerifiable:false and the",
+    "verifier enforces a different rule on it: any claim that CAN be corroborated in the",
+    "owner's manual must cite where, and the rest are shown to the user alongside a crop",
+    "of the chart itself so the picture is the citation.",
+    "",
+    "This is the chart the brief calls out by name: 'some critical information exists",
+    "only in images (the welding process selection chart, ...)'."
+  ],
+  "source": { "doc": "sel", "page": 1, "image": "/docs/sel-p1.png", "textVerifiable": false },
+  "thicknessNote": "Gauge-to-inch conversions below are the standard US sheet-steel gauge and are OURS, not the chart's. The chart prints only the gauge label; the decimal is shown so a thickness can be range-checked, and is labelled as derived wherever it is displayed.",
+  "rows": [
+    {
+      "id": "fcaw",
+      "process": "Flux-Cored",
+      "chartName": "FLUX-CORED / FCAW",
+      "skillLevel": "LOW",
+      "shieldingGas": "NO-GAS REQUIRED",
+      "materials": ["Steel", "Stainless Steel"],
+      "thickness": { "label": "18 Gauge to 5/16\"", "minIn": 0.0478, "maxIn": 0.3125 },
+      "cleanliness": "MORE SPATTER",
+      "applications": ["Galvanized steel", "Pipe and tubing", "General fabrication", "Maintenance & repair"],
+      "strengths": [
+        "Ideal for outdoor or windy conditions",
+        "Forgiving on rusty or dirty steels",
+        "Good out of position welding capabilities",
+        "High deposition rates achievable"
+      ],
+      "corroboration": { "page": 13, "claim": "self-shielded flux-core needs no shielding gas" }
+    },
+    {
+      "id": "mig",
+      "process": "MIG",
+      "chartName": "MIG / GMAW",
+      "skillLevel": "LOW",
+      "shieldingGas": "GAS REQUIRED",
+      "gasNote": "Indoor welding recommended",
+      "materials": ["Steel", "Stainless Steel", "Aluminum (Spool gun required)"],
+      "thickness": { "label": "22 Gauge to 3/8\"", "minIn": 0.0299, "maxIn": 0.375 },
+      "cleanliness": "CLEAN / MINIMAL SPATTER",
+      "applications": ["Sheet metal", "Tubing", "Automotive body", "Structural steel"],
+      "strengths": [
+        "Fast production (high welding speeds)",
+        "Easiest to learn",
+        "Clean welds with no slag",
+        "Better control on thin materials"
+      ],
+      "corroboration": { "page": 17, "claim": "aluminium is welded with the optional spool gun" }
+    },
+    {
+      "id": "stick",
+      "process": "Stick",
+      "chartName": "STICK / SMAW",
+      "skillLevel": "MODERATE",
+      "shieldingGas": "NO-GAS REQUIRED",
+      "materials": ["Steel", "Stainless Steel", "Castings"],
+      "thickness": { "label": "10 Gauge to 1/2\"", "minIn": 0.1345, "maxIn": 0.5 },
+      "cleanliness": "MORE SPATTER",
+      "applications": ["Pipe and tubing", "Pressure vessels", "Structural steel", "Maintenance & repair"],
+      "strengths": [
+        "Ideal for outdoor or windy conditions",
+        "Forgiving on rusty or dirty steels",
+        "Deep penetration",
+        "Good choice for thicker materials"
+      ],
+      "corroboration": null
+    },
+    {
+      "id": "tig",
+      "process": "TIG",
+      "chartName": "TIG / GTAW",
+      "skillLevel": "HIGH",
+      "shieldingGas": "GAS REQUIRED",
+      "gasNote": "Indoor welding recommended",
+      "materials": ["Steel", "Stainless Steel", "Chrome Moly"],
+      "materialsRequiringAcTig": ["Aluminum", "Magnesium Alloys"],
+      "thickness": { "label": "24 Gauge to 3/16\"", "minIn": 0.0239, "maxIn": 0.1875 },
+      "cleanliness": "EXTREMELY CLEAN",
+      "applications": ["Stainless steel exhausts", "Thin wall pipe & tubing", "Bicycle frames", "Metal art"],
+      "strengths": [
+        "Highest quality welds",
+        "Extremely aesthetic weld appearance",
+        "Can be used on a variety of materials",
+        "Precise control"
+      ],
+      "corroboration": { "page": 7, "claim": "TIG weldable materials are mild steel, stainless and chrome moly" }
+    }
+  ],
+  "acTigResolution": {
+    "_comment": [
+      "The chart is the third source that settles page 28's 'AC TIG Welding is used to",
+      "weld aluminum' line. The chart splits TIG in two: steel/stainless/chrome-moly are",
+      "marked 'DC TIG REQUIRED', aluminium and magnesium are marked 'AC TIG REQUIRED'.",
+      "Page 7 lists this machine's TIG materials as exactly the first group and its output",
+      "as DC. So page 28 is not describing a capability of this welder -- it is describing",
+      "what AC TIG is for, on a machine that does not have it."
+    ],
+    "chartSaysDcRequiredFor": ["Steel", "Stainless Steel", "Chrome Moly"],
+    "chartSaysAcRequiredFor": ["Aluminum", "Magnesium Alloys"],
+    "machineIsDcOnly": { "page": 7, "quote": "Maximum OCV 86 VDC" },
+    "conclusion": "This welder cannot TIG aluminium. Aluminium goes through the optional spool gun on MIG."
+  },
+  "dutyCycleDefinition": {
+    "_comment": "The chart also defines duty cycle in plain words and gives a worked example. The 165 A figure is the chart's generic illustration, NOT a rating for this machine -- this welder's own 30% point is 175 A. Kept here so nothing downstream mistakes it for a rated point.",
+    "definition": "The Duty Cycle is the number of minutes, within a 10 minute period, a welding process can produce the specified welding current without overheating.",
+    "genericExample": { "amps": 165, "dutyPct": 30, "weldingMinutes": 3, "restingMinutes": 7, "isRatingForThisMachine": false }
+  }
+}
