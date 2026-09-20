@@ -17,7 +17,7 @@ import { readFile } from "node:fs/promises";
 import { dirname, extname, join, normalize } from "node:path";
 import { fileURLToPath } from "node:url";
 import { ask, type Attachment } from "../agent/src/session.js";
-import { requireCredentials } from "../agent/src/preflight.js";
+import { optionalCredentials } from "../agent/src/preflight.js";
 import { pages } from "../agent/src/retrieval.js";
 import { groundTruth } from "../diagram/src/groundTruth.js";
 import { buildPolarityCircuit } from "../diagram/src/builders/polarity.js";
@@ -51,7 +51,40 @@ function figuresForPages(pagesCited: number[]): Array<{ id: string; page: number
     .map((f) => ({ id: f.id, page: f.page }));
 }
 
-const creds = requireCredentials();
+/**
+ * Reported, not required.
+ *
+ * Most of this server needs no model: the verified diagrams, the three
+ * interactive widgets, the manual browser, the figure store, the rejection demo
+ * and the voice fast path are pure functions over committed data. Exiting here
+ * because no key is set would take all of that down too, which is precisely
+ * backwards for a hosted demo.
+ */
+const creds = optionalCredentials();
+
+/**
+ * The key for one request.
+ *
+ * Server-side credentials win when they exist (that is the local case). On a
+ * public deployment there are none, so the viewer supplies their own and it
+ * lives for the duration of this request -- no cookie, no storage, no log line.
+ */
+function keyFor(req: import("node:http").IncomingMessage): string | undefined {
+  if (creds) return undefined; // use the ambient credentials
+  const h = req.headers["x-anthropic-key"];
+  const k = Array.isArray(h) ? h[0] : h;
+  return k && k.startsWith("sk-ant-") ? k : undefined;
+}
+
+const NEEDS_KEY = {
+  error: "no_credentials",
+  message:
+    "This public demo has no API key of its own. Everything that does not call the model " +
+    "works without one -- the verified diagrams, the interactive widgets, the manual browser " +
+    "and the rejection demo. To ask the agent a question, supply your own Anthropic key; it is " +
+    "held for that request only and is never stored.",
+  getOne: "https://console.anthropic.com/settings/keys",
+} as const;
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const PUBLIC = join(HERE, "public");
@@ -95,12 +128,14 @@ const server = createServer(async (req, res) => {
       };
       const question = (body.question ?? "").trim();
       if (!question) return json(res, 400, { error: "empty question" });
+      const apiKey = keyFor(req);
+      if (!creds && !apiKey) return json(res, 401, NEEDS_KEY);
 
       const started = Date.now();
-      const result = await ask({
-        text: question,
-        ...(body.images?.length ? { images: body.images } : {}),
-      });
+      const result = await ask(
+        { text: question, ...(body.images?.length ? { images: body.images } : {}) },
+        apiKey ? { apiKey } : {},
+      );
 
       // Pages the answer actually cites, so the rail shows provenance rather
       // than a generic source list.
@@ -180,10 +215,15 @@ const server = createServer(async (req, res) => {
         send("error", { error: "empty question" });
         return res.end();
       }
+      const apiKey = keyFor(req);
+      if (!creds && !apiKey) {
+        send("error", NEEDS_KEY);
+        return res.end();
+      }
       const started = Date.now();
       const result = await ask(
         { text: question, ...(body.images?.length ? { images: body.images } : {}) },
-        {},
+        apiKey ? { apiKey } : {},
         (e) => {
           if (e.type === "done") return;
           send(e.type, e);
@@ -390,5 +430,9 @@ const server = createServer(async (req, res) => {
 
 server.listen(PORT, () => {
   console.log(`OmniPro 220 specialist  ->  http://127.0.0.1:${PORT}`);
-  console.log(`auth: ${creds.source}`);
+  console.log(
+    creds
+      ? `auth: ${creds.source}`
+      : "auth: none — everything except the agent works; viewers supply their own key",
+  );
 });

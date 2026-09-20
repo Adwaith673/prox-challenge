@@ -983,13 +983,45 @@ $("form").onsubmit = async (e) => {
   cursor.className = "cursor";
   t.body.append(cursor);
 
+/**
+ * The viewer's own key, on the hosted build only.
+ *
+ * A public URL wired to my key is an open tap on my account, so the deployment
+ * has none and asks for yours instead. It lives in this variable for this tab:
+ * no cookie, no localStorage, nothing sent anywhere but the one request that
+ * needs it, and a refresh throws it away. Locally the server has its own
+ * credentials and this stays empty.
+ */
+let byoKey = "";
+
+function askForKey(message) {
+  const k = window.prompt(
+    (message || "This demo has no API key of its own.") +
+      "\n\nPaste an Anthropic API key to ask the agent. It is kept for this tab only." +
+      "\n\nEverything else on the page - the verified diagrams, the widgets, the manual" +
+      "\nbrowser and the rejected-diagram demo - works without one." +
+      "\n\nGet a key: https://console.anthropic.com/settings/keys",
+    "",
+  );
+  if (k && k.trim().startsWith("sk-ant-")) { byoKey = k.trim(); return true; }
+  return false;
+}
+
   let raw = "";
   const chips = new Map();
   aborter = new AbortController();
 
   try {
     const res = await fetch("/api/ask/stream", {
-      method: "POST", headers: { "content-type": "application/json" },
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        // Only present on the hosted build, where the server has no key of its
+        // own. Kept in a module-scoped variable for this tab: no cookie, no
+        // localStorage, no server storage, and a refresh loses it. Running
+        // locally this is empty and the server uses its own credentials.
+        ...(byoKey ? { "x-anthropic-key": byoKey } : {}),
+      },
       body: JSON.stringify(payload), signal: aborter.signal,
     });
     const reader = res.body.getReader();
@@ -1052,6 +1084,17 @@ $("form").onsubmit = async (e) => {
           toBottom();
         }
         else if (ev[1] === "error") {
+          if (d.error === "no_credentials") {
+            // Ask once, then replay the same question rather than making the
+            // user retype it.
+            cursor.remove(); setBusy(false); aborter = null;
+            if (askForKey(d.message)) return send(payload, t);
+            t.body.append(Object.assign(document.createElement("div"), {
+              className: "err",
+              textContent: "No key supplied — the agent is unavailable, but everything else on this page still works.",
+            }));
+            return;
+          }
           t.body.append(Object.assign(document.createElement("div"), { className: "err", textContent: d.error }));
         }
         else if (ev[1] === "done") {

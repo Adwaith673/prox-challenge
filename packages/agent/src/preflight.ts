@@ -32,6 +32,30 @@ export interface Credentials {
 }
 
 /**
+ * The same check, but it reports rather than exits.
+ *
+ * `requireCredentials` is right for the CLI and the eval runner: no key means no
+ * work, so say so and stop. It is wrong for a hosted demo, where exiting at
+ * module load takes down a site on which most of the interesting surface needs
+ * no model at all -- the verified diagrams, the interactive widgets, the manual
+ * browser, the rejection demo and the voice fast path are all pure functions
+ * over committed data.
+ *
+ * So the server asks this instead, serves everything it can, and requires a key
+ * only on the two routes that actually reach the API.
+ */
+export function optionalCredentials(): Credentials | null {
+  loadEnv();
+  if (process.env["ANTHROPIC_API_KEY"]) return { source: "ANTHROPIC_API_KEY" };
+  const cliLogin = join(
+    process.env["USERPROFILE"] ?? process.env["HOME"] ?? "",
+    ".claude",
+    ".credentials.json",
+  );
+  return existsSync(cliLogin) ? { source: "claude-cli-login" } : null;
+}
+
+/**
  * Confirm we can authenticate, or explain exactly how to.
  *
  * Two paths work. An API key is what a reviewer will use. A Claude Code CLI

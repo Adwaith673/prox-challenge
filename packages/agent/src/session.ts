@@ -89,6 +89,16 @@ export interface AskOptions {
   model?: string;
   /** Raise for the eval suite; the default keeps a stray loop from burning budget. */
   maxTurns?: number;
+  /**
+   * A key supplied per request, for the hosted demo.
+   *
+   * A public URL wired to the author's own key is an open tap on their account,
+   * so the deployed build asks the viewer for one and holds it for that request
+   * only -- it is never written to disk, never logged, and never leaves this
+   * process except as the subprocess env below. Locally this is undefined and
+   * the ambient credentials are used as before.
+   */
+  apiKey?: string;
 }
 
 /**
@@ -148,7 +158,11 @@ export async function ask(
       permissionMode: "bypassPermissions",
       maxTurns: opts.maxTurns ?? 14,
       includePartialMessages: Boolean(onEvent),
-      env: { ...process.env, CLAUDE_CODE_PROMPT_CACHE_TTL: "1h" },
+      env: {
+        ...process.env,
+        ...(opts.apiKey ? { ANTHROPIC_API_KEY: opts.apiKey } : {}),
+        CLAUDE_CODE_PROMPT_CACHE_TTL: "1h",
+      },
     },
   });
 
