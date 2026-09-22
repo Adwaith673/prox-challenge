@@ -1,0 +1,26 @@
+# Zero-config deploy for Render.
+#
+# No build step and no bundler: the server runs TypeScript directly through tsx,
+# and the whole knowledge index is committed, so there is nothing to compile and
+# nothing to extract at boot.
+#
+# Deliberately no ANTHROPIC_API_KEY. A public URL wired to the author's key is an
+# open tap on their account, so the deployed build carries none: everything that
+# does not call the model -- the verified diagrams, the three interactive
+# widgets, the manual browser, the figure store and the rejected-diagram demo --
+# serves without one, and asking the agent a question prompts the viewer for
+# their own key, held for that request only.
+services:
+  - type: web
+    name: omnipro-220-specialist
+    runtime: node
+    plan: starter          # not `free`: free instances cold-start after inactivity,
+                           # and a reviewer meeting a 50-second spinner is worse
+                           # than meeting no link at all.
+    region: oregon
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/facts
+    envVars:
+      - key: NODE_VERSION
+        value: 22.20.0

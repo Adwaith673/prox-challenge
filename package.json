@@ -3,6 +3,9 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
+  "engines": {
+    "node": ">=20.11"
+  },
   "workspaces": [
     "packages/*"
   ],
@@ -18,17 +21,18 @@
     "web": "tsx packages/web/server.ts",
     "eval:welds": "tsx evals/run.ts --welds",
     "eval:all": "tsx evals/run.ts --all",
-    "check": "vitest run packages/agent/test/answercheck.test.ts"
+    "check": "vitest run packages/agent/test/answercheck.test.ts",
+    "start": "tsx packages/web/server.ts"
   },
   "devDependencies": {
     "@types/node": "^22.10.2",
-    "tsx": "^4.19.2",
     "typescript": "^5.7.2",
     "vitest": "^2.1.8"
   },
   "dependencies": {
     "@anthropic-ai/claude-agent-sdk": "^0.3.276",
     "@anthropic-ai/sdk": "^0.126.0",
-    "zod": "^4.6.5"
+    "zod": "^4.6.5",
+    "tsx": "^4.19.2"
   }
 }
