@@ -10,10 +10,26 @@ the quick-start guide yields 558, none of which is the cable wiring it exists to
 text-only pipeline reads one document out of four and reports success.
 
 ### ▶ Watch it work — https://youtu.be/boKsWqR1Wis
+### ● Try it now — https://omnipro-220-specialist.onrender.com
 
-Four minutes, no voiceover, nothing staged: every answer in it is produced live by the agent in
-this repo. Flux-core polarity as a derived diagram, the duty cycle at 200 A, the settings question
-that has no printed answer, the AC-TIG contradiction, and the duty-cycle calculator driven by hand.
+Four minutes, no voiceover, nothing staged: every answer in the video is produced live by the agent
+in this repo. Flux-core polarity as a derived diagram, the duty cycle at 200 A, the settings
+question that has no printed answer, the AC-TIG contradiction, and the duty-cycle calculator driven
+by hand.
+
+**The hosted build needs no key for most of what is interesting.** The verified wiring diagrams, all
+three interactive widgets, the manual browser, the figure store and the rejected-diagram demo are
+pure functions over committed data, so they serve to anyone. Click the **+** beside the suggestion
+chips first: it takes the real flux-core diagram, moves one lead to the wrong socket, and shows the
+verifier refusing to draw it — `TOPOLOGY`, `WRONG_SOCKET`, nothing rendered. That is the argument of
+the whole submission, in about five seconds, with no key and no clone.
+
+Asking the agent an actual question prompts for your own Anthropic key, held in the browser tab for
+that request only — no cookie, no storage, gone on refresh. A public URL wired to my key would be an
+open tap on my account. Running locally, the server uses its own credentials and none of that
+applies.
+
+It is on a free instance, so if it has been idle it may take a moment to wake.
 
 ```bash
 npm install
