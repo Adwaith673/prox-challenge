@@ -10,13 +10,18 @@
 # widgets, the manual browser, the figure store and the rejected-diagram demo --
 # serves without one, and asking the agent a question prompts the viewer for
 # their own key, held for that request only.
+#
+# On `free`, because it needs no card. The catch is that free instances sleep
+# after 15 minutes idle and take 30-60s to wake, which for a link someone clicks
+# once is genuinely worse than no link. The fix is a keep-warm ping -- any free
+# uptime checker hitting /api/facts every 10 minutes holds it open, and 750
+# free hours a month covers one service running continuously. /api/facts reads
+# the committed tables and calls no model, so pinging it costs nothing.
 services:
   - type: web
     name: omnipro-220-specialist
     runtime: node
-    plan: starter          # not `free`: free instances cold-start after inactivity,
-                           # and a reviewer meeting a 50-second spinner is worse
-                           # than meeting no link at all.
+    plan: free
     region: oregon
     buildCommand: npm install
     startCommand: npm start
