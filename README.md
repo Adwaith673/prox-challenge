@@ -9,6 +9,12 @@ Two of those four have no usable text layer. The selection chart extracts **zero
 the quick-start guide yields 558, none of which is the cable wiring it exists to show. A
 text-only pipeline reads one document out of four and reports success.
 
+### ▶ Watch it work — https://youtu.be/boKsWqR1Wis
+
+Four minutes, no voiceover, nothing staged: every answer in it is produced live by the agent in
+this repo. Flux-core polarity as a derived diagram, the duty cycle at 200 A, the settings question
+that has no printed answer, the AC-TIG contradiction, and the duty-cycle calculator driven by hand.
+
 ```bash
 npm install
 export ANTHROPIC_API_KEY=sk-ant-...    # or: cp .env.example .env and edit
